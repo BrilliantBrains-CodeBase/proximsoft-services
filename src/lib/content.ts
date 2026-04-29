@@ -46,6 +46,20 @@ export interface BlogItem {
   href?: string
 }
 
+export interface HeroSlide {
+  id: string
+  eyebrow: string
+  title: string
+  description: string
+  cta: {
+    text: string
+    href: string
+  }
+  image: string
+  shape?: string
+  variant: 'dark' | 'light' | 'light-left'
+}
+
 export const siteConfig = {
   // ─── Business identity ──────────────────────────────────────────────────────
   name: 'Proximsoft Solutions',
@@ -97,7 +111,7 @@ export const siteConfig = {
         cta: { text: 'Schedule a Call', href: '#contact-form' },
         image: '/images/slider/slide-woman-red.png',
         shape: '',
-        variant: 'light' as const,
+        variant: 'light',
       },
       {
         id: 'slide2',
@@ -107,7 +121,7 @@ export const siteConfig = {
         cta: { text: 'Schedule a Call', href: '#contact-form' },
         image: '/images/slider/slide-man-white.png',
         shape: '',
-        variant: 'light' as const,
+        variant: 'light',
       },
       {
         id: 'slide3',
@@ -117,9 +131,9 @@ export const siteConfig = {
         cta: { text: 'Schedule a Call', href: '#contact-form' },
         image: '/images/slider/slide-man-blue.png',
         shape: '',
-        variant: 'light-left' as const,
+        variant: 'light-left',
       },
-    ],
+    ] as HeroSlide[],
   },
 
   // ─── Services ────────────────────────────────────────────────────────────────
