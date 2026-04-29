@@ -346,13 +346,13 @@ export const siteConfig = {
     logo: '/images/logo-proximsoft-white.png',
     navLinks: [
       { text: 'Home',         href: '/' },
-      { text: 'About Us',     href: '#about' },
+      { text: 'About Us',     href: '/about' },
       { text: 'Services',     href: '#services' },
       { text: 'Technologies', href: '#services' },
       { text: 'Industries',   href: '#projects' },
       { text: 'Careers',      href: '#' },
       { text: 'Blogs',        href: '#blog' },
-      { text: 'Contact Us',   href: '#contact-form' },
+      { text: 'Contact Us',   href: '/contact' },
     ],
     socialLinks: [
       { platform: 'Facebook', href: '#', icon: 'fa-facebook' },

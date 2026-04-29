@@ -4,11 +4,11 @@ import { siteConfig } from '@/lib/content'
 
 const NAV_LINKS = [
   { text: 'Home',         href: '/' },
-  { text: 'About Us',     href: '#about' },
+  { text: 'About Us',     href: '/about' },
   { text: 'Services',     href: '#services' },
   { text: 'Careers',      href: '#' },
   { text: 'Blogs',        href: '#blog' },
-  { text: 'Contact Us',   href: '#contact-form' },
+  { text: 'Contact Us',   href: '/contact' },
 ]
 
 export default function Header() {

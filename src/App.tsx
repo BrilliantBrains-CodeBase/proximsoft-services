@@ -1,6 +1,8 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import MainLayout from './layout/MainLayout'
 import Home from './pages/Home/Home'
+import AboutPage from './pages/About/AboutPage'
+import ContactPage from './pages/Contact/ContactPage'
 import TermsPage from './pages/legal/TermsPage'
 import PrivacyPage from './pages/legal/PrivacyPage'
 import ThankYou from './pages/ThankYou/ThankYou'
@@ -12,6 +14,8 @@ export default function App() {
       <Routes>
         <Route element={<MainLayout />}>
           <Route path="/" element={<Home />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/contact" element={<ContactPage />} />
           <Route path="/terms" element={<TermsPage />} />
           <Route path="/privacy" element={<PrivacyPage />} />
           <Route path="/thank-you" element={<ThankYou />} />
