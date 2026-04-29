@@ -123,16 +123,7 @@ export const siteConfig = {
         shape: '',
         variant: 'light',
       },
-      {
-        id: 'slide3',
-        eyebrow: 'TRUSTED ENTERPRISE PARTNER',
-        title: 'Strategy, Implementation & Beyond.',
-        description: 'From initial discovery through hypercare, our consultants are with you at every stage — ensuring your investment in enterprise technology pays off.',
-        cta: { text: 'Schedule a Call', href: '#contact-form' },
-        image: '/images/slider/slide-man-blue.png',
-        shape: '',
-        variant: 'light-left',
-      },
+
     ] as HeroSlide[],
   },
 
