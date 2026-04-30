@@ -1,13 +1,10 @@
+import { Link } from 'react-router-dom'
 import { siteConfig } from '@/lib/content'
-
-const LATEST_POSTS = [
-  { title: 'SAP S/4HANA 2025: What You Need to Know Before You Migrate', date: 'April 15, 2026',  image: '/images/blog/small/1.jpg', href: '#' },
-  { title: 'Salesforce Einstein AI: Turning CRM Data Into Revenue',       date: 'March 28, 2026', image: '/images/blog/small/2.jpg', href: '#' },
-  { title: 'Building an AI-Ready Data Platform: A Practical Roadmap',     date: 'March 10, 2026', image: '/images/blog/small/3.jpg', href: '#' },
-]
+import blogsData from '@/data/blogs.json'
 
 export default function Footer() {
   const { contact, name, footer } = siteConfig
+  const latestPosts = blogsData.posts.slice(0, 3)
 
   return (
     <footer id="rs-footer" className="rs-footer">
@@ -74,13 +71,13 @@ export default function Footer() {
             <div>
               <h4 className="footer-widget-title">Latest Posts</h4>
               <div className="footer-posts">
-                {LATEST_POSTS.map((post) => (
-                  <div key={post.title} className="footer-post-item">
-                    <a href={post.href} className="footer-post-thumb">
+                {latestPosts.map((post) => (
+                  <div key={post.slug} className="footer-post-item">
+                    <Link to={`/blog/${post.slug}`} className="footer-post-thumb">
                       <img src={post.image} alt={post.title} loading="lazy" />
-                    </a>
+                    </Link>
                     <div className="footer-post-info">
-                      <a href={post.href} className="footer-post-title">{post.title}</a>
+                      <Link to={`/blog/${post.slug}`} className="footer-post-title">{post.title}</Link>
                       <div className="footer-post-date">
                         <CalendarIcon /> {post.date}
                       </div>

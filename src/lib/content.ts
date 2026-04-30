@@ -310,21 +310,21 @@ export const siteConfig = {
         description: 'SAP has set a firm deadline for ECC support. Here is what enterprise IT leaders must assess before committing to a migration path.',
         image: '/images/blog/1.jpg',
         date: '15 Apr 2026',
-        href: '#',
+        href: '/blog/sap-s4hana-2025-migration',
       },
       {
         title: 'Salesforce Einstein AI: Turning CRM Data Into Revenue',
         description: 'How enterprise sales and service teams are using Salesforce Einstein to surface the right insights at exactly the right moment in the customer journey.',
         image: '/images/blog/2.jpg',
         date: '28 Mar 2026',
-        href: '#',
+        href: '/blog/salesforce-einstein-ai-revenue',
       },
       {
         title: 'Building an AI-Ready Data Platform: A Practical Roadmap',
         description: 'Most enterprises have the data — but not the architecture. Here is how to move from fragmented data silos to a modern, AI-ready data platform.',
         image: '/images/blog/3.jpg',
         date: '10 Mar 2026',
-        href: '#',
+        href: '/blog/ai-ready-data-platform-roadmap',
       },
     ] as BlogItem[],
   },
@@ -339,6 +339,22 @@ export const siteConfig = {
     sideImageAlt: 'Proximsoft Solutions consulting team',
   },
 
+  // ─── Careers ─────────────────────────────────────────────────────────────
+  careers: {
+    meta: {
+      title: 'Careers | Proximsoft Solutions',
+      description: 'Join Proximsoft Solutions and help shape the future of enterprise technology. Explore open roles in SAP, Salesforce, Data & AI, and project management.',
+    },
+    whyWorkWithUs: [
+      { icon: 'Rocket',    heading: 'Accelerated Growth',    body: 'Fast-track your career with hands-on experience across Fortune 500 enterprise projects from day one.' },
+      { icon: 'Users',     heading: 'Collaborative Culture',  body: 'Work alongside certified experts in a team that values knowledge-sharing, mentorship, and mutual respect.' },
+      { icon: 'Globe',     heading: 'Remote-First',           body: 'Work from anywhere with flexible hours. We trust our team to deliver results, not manage attendance.' },
+      { icon: 'Award',     heading: 'Competitive Benefits',   body: 'Market-rate salaries, performance bonuses, health coverage, and full support for professional certifications.' },
+      { icon: 'BookOpen',  heading: 'Learning & Development', body: 'Dedicated learning budgets, SAP and Salesforce certification pathways, and access to the latest industry training.' },
+      { icon: 'Briefcase', heading: 'Impactful Work',         body: 'Every project solves real challenges for real businesses. Our consultants make decisions that matter from day one.' },
+    ] as { icon: string; heading: string; body: string }[],
+  },
+
   // ─── Footer ──────────────────────────────────────────────────────────────
   footer: {
     tagline: 'Enterprise IT consulting across SAP, Salesforce, Oracle, Microsoft, and AI platforms. From strategy to go-live — we deliver outcomes that last.',
@@ -350,8 +366,8 @@ export const siteConfig = {
       { text: 'Services',     href: '#services' },
       { text: 'Technologies', href: '#services' },
       { text: 'Industries',   href: '#projects' },
-      { text: 'Careers',      href: '#' },
-      { text: 'Blogs',        href: '#blog' },
+      { text: 'Careers',      href: '/careers' },
+      { text: 'Blogs',        href: '/blog' },
       { text: 'Contact Us',   href: '/contact' },
     ],
     socialLinks: [

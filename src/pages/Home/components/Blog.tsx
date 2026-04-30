@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { AnimatedSection } from '@/components/AnimatedSection'
 import { siteConfig } from '@/lib/content'
 
@@ -28,7 +29,9 @@ export default function Blog() {
               <div className="blog-wrap">
                 {/* Image with centered date badge at bottom */}
                 <div className="img-part">
-                  <img src={item.image} alt={item.title} loading="lazy" />
+                  <Link to={item.href ?? '/blog'} tabIndex={-1} aria-hidden="true">
+                    <img src={item.image} alt={item.title} loading="lazy" />
+                  </Link>
                   <div className="blog-meta">
                     <ClockIcon /> {item.date}
                   </div>
@@ -37,18 +40,25 @@ export default function Blog() {
                 {/* Content — ::before/::after domes live here */}
                 <div className="content-part">
                   <h4 className="title">
-                    <a href={item.href ?? '#'}>{item.title}</a>
+                    <Link to={item.href ?? '/blog'}>{item.title}</Link>
                   </h4>
                   <p className="desc">{item.description}</p>
                   {/* + button — hidden below fold, rises on hover */}
                   <div className="btn-part">
-                    <a href={item.href ?? '#'} aria-label={`Read more about ${item.title}`}>+</a>
+                    <Link to={item.href ?? '/blog'} aria-label={`Read more about ${item.title}`}>+</Link>
                   </div>
                 </div>
               </div>
             </AnimatedSection>
           ))}
         </div>
+
+        {/* View all CTA */}
+        <AnimatedSection>
+          <div className="text-center mt-12">
+            <Link to="/blog" className="readon">View All Posts</Link>
+          </div>
+        </AnimatedSection>
       </div>
     </section>
   )

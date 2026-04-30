@@ -41,12 +41,12 @@ export default function TrustSignals() {
   return (
     <section id="about">
       {/* ── About style5: text+counters left, about11.png right ── */}
-      <div id="rs-about" className="bg-white">
+      <div id="rs-about" className="bg-white overflow-visible">
         <div className="mx-auto max-w-[var(--container-max-width)] px-6 py-[var(--section-padding-y)]">
-          <div className="rs-about-5 grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div className="rs-about-5 grid md:grid-cols-2 gap-12 lg:gap-16 items-start">
 
             {/* Left: sub-title + heading + description + counters */}
-            <AnimatedSection>
+            <AnimatedSection className="pt-8">
               <span className="sub-title-label">{a.subTitle}</span>
               <h2 className="section-title mb-4">{a.headline}</h2>
               <p className="text-[var(--color-text-secondary)] leading-relaxed mb-8">{a.description}</p>
@@ -66,13 +66,13 @@ export default function TrustSignals() {
               </div>
             </AnimatedSection>
 
-            {/* Right: about11.png with morphin blob */}
-            <AnimatedSection delay={0.15}>
+            {/* Right: about11.png with morphin blob — pulled up so blob overlaps counter area */}
+            <AnimatedSection delay={0.15} className="about-img-col" style={{ marginTop: '-90px' }}>
               <div className="relative flex justify-center md:justify-end">
                 {/* accent morphin blob behind the image */}
                 <div
                   className="morphin-blob"
-                  style={{ width: 400, height: 400, right: 40, bottom: 10 }}
+                  style={{ width: 420, height: 420, right: 30, bottom: 20 }}
                   aria-hidden="true"
                 />
                 <img
@@ -90,20 +90,10 @@ export default function TrustSignals() {
       {/* ── About style6: dark bg, about11-2.png left, text+video right ── */}
       <div className="rs-about-6 py-(--section-padding-y)">
         <div className="inner mx-auto max-w-max-width px-6">
-          <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
-
-            {/* Image */}
-            <AnimatedSection className="flex justify-center">
-              <img
-                src={d.image}
-                alt={d.imageAlt}
-                className="w-full max-w-120 object-contain relative z-10"
-                loading="lazy"
-              />
-            </AnimatedSection>
+          <div className="grid gap-12 lg:gap-16 items-center">
 
             {/* Text + video */}
-            <AnimatedSection delay={0.15}>
+            <AnimatedSection>
               <span className="sub-title-label">{d.subTitle}</span>
               <h2 className={`section-title waving-line white mb-6`} style={{ color: '#ffffff' }}>
                 {d.headline}

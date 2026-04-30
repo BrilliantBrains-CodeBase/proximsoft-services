@@ -1,0 +1,49 @@
+{
+  "jobs": [
+    {
+      "id": "senior-sap-s4hana-consultant",
+      "title": "Senior SAP S/4HANA Consultant",
+      "department": "SAP",
+      "type": "Full-time",
+      "location": "Remote / Hybrid",
+      "description": "Lead end-to-end SAP S/4HANA implementations across Finance, Supply Chain, and Manufacturing modules. Drive business process workshops, configure solutions, and own delivery quality from blueprint to go-live.",
+      "posted": "2026-04-20"
+    },
+    {
+      "id": "sap-abap-developer",
+      "title": "SAP ABAP Developer",
+      "department": "SAP",
+      "type": "Full-time",
+      "location": "Hybrid",
+      "description": "Design and develop custom ABAP enhancements, BAdIs, user exits, and RESTful APIs for enterprise SAP environments. Work closely with functional consultants to translate business requirements into robust technical solutions.",
+      "posted": "2026-04-15"
+    },
+    {
+      "id": "salesforce-crm-developer",
+      "title": "Salesforce CRM Developer",
+      "department": "Salesforce",
+      "type": "Full-time",
+      "location": "Remote",
+      "description": "Build and customise Salesforce Sales Cloud and Service Cloud solutions using Apex, LWC, and Flow. Deliver integrations with SAP and third-party platforms using MuleSoft and REST APIs.",
+      "posted": "2026-04-18"
+    },
+    {
+      "id": "data-ai-engineer",
+      "title": "Data & AI Engineer",
+      "department": "Data & AI",
+      "type": "Full-time",
+      "location": "Remote",
+      "description": "Architect and build modern data platforms on AWS, Azure, and GCP. Develop AI-powered analytics solutions, ML pipelines, and real-time reporting dashboards for enterprise clients across multiple industries.",
+      "posted": "2026-04-10"
+    },
+    {
+      "id": "erp-project-manager",
+      "title": "ERP Project Manager",
+      "department": "Management",
+      "type": "Full-time",
+      "location": "Hybrid",
+      "description": "Manage end-to-end delivery of complex ERP implementation programs. Drive scope, schedule, budget, and stakeholder communications across cross-functional teams for SAP, Oracle, and Microsoft Dynamics engagements.",
+      "posted": "2026-04-05"
+    }
+  ]
+}

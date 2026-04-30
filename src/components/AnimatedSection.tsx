@@ -1,10 +1,13 @@
 import { motion } from 'motion/react'
 import type { ReactNode } from 'react'
 
+import type { CSSProperties } from 'react'
+
 interface AnimatedSectionProps {
   children: ReactNode
   delay?: number
   className?: string
+  style?: CSSProperties
 }
 
 /**
@@ -20,7 +23,7 @@ interface AnimatedSectionProps {
  *     <p>Staggered content</p>
  *   </AnimatedSection>
  */
-export function AnimatedSection({ children, delay = 0, className }: AnimatedSectionProps) {
+export function AnimatedSection({ children, delay = 0, className, style }: AnimatedSectionProps) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 24 }}
@@ -28,6 +31,7 @@ export function AnimatedSection({ children, delay = 0, className }: AnimatedSect
       viewport={{ once: true, margin: '-60px' }}
       transition={{ duration: 0.5, delay, ease: 'easeOut' }}
       className={className}
+      style={style}
     >
       {children}
     </motion.div>
