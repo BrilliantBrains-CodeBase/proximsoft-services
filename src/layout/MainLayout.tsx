@@ -2,6 +2,7 @@ import { Outlet } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import Header from './Header/Header'
 import Footer from './Footer/Footer'
+import ScrollToTop from '@/components/ScrollToTop'
 import { siteConfig } from '@/lib/content'
 import { buildSchema } from '@/lib/schema'
 import MetaPixel from '@/components/analytics/MetaPixel'
@@ -44,6 +45,7 @@ export default function MainLayout() {
         <Outlet />
       </main>
       <Footer />
+      <ScrollToTop />
     </>
   )
 }

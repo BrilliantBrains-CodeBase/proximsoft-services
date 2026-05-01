@@ -17,15 +17,15 @@ interface FAQProps {
  * 3. Minimum 6 items required
  */
 export default function FAQ({ items = siteConfig.faq, sectionId = 'faq' }: FAQProps) {
-  const [open, setOpen] = useState<number | null>(null)
+  const [open, setOpen] = useState<number | null>(0)
 
   const toggle = (i: number) => setOpen((prev) => (prev === i ? null : i))
 
   return (
-    <section id={sectionId} className="py-[var(--section-padding-y)] bg-[var(--color-background)]">
+    <section id={sectionId} className="pt-4 pb-(--section-padding-y) bg-background">
       <div className="mx-auto max-w-[var(--container-max-width)] px-6">
         <AnimatedSection>
-          <div className="flex flex-col md:flex-row md:items-end gap-4 md:gap-8 mb-12">
+          <div className="flex flex-col md:flex-row md:items-end gap-4 md:gap-8 mb-6">
             <div className="md:w-5/12">
               <span className="sub-title-label">FAQ</span>
               <h2 className="section-title">Frequently Asked Questions</h2>

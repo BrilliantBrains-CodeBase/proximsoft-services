@@ -36,7 +36,7 @@ export default function Testimonials() {
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
-      <div className="mx-auto max-w-[var(--container-max-width)] px-6 py-28">
+      <div className="mx-auto max-w-[var(--container-max-width)] px-6 py-(--section-padding-y)">
 
         {/* Two-col header */}
         <div className="flex flex-col md:flex-row md:items-end gap-4 md:gap-8 mb-14">

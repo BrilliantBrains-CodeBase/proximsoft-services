@@ -37,40 +37,22 @@ function Counter({ target, suffix = '' }: { target: number; suffix?: string }) {
 
 const teamMembers = [
   {
-    name: 'Michael Torres',
-    role: 'Business Advisor',
-    description: 'Et harum quidem rerum facilis est et expedita disctinctio. Nam libero tempore veriations.',
+    name: '[Team Member Name]',
+    role: 'SAP Practice Lead',
+    description: 'Senior SAP architect with deep expertise in S/4HANA migrations, AMS support, and cross-industry enterprise implementations.',
     avatar: '/images/team/1.jpg',
   },
   {
-    name: 'Rachel Kim',
-    role: 'Senior Consultant',
-    description: 'Et harum quidem rerum facilis est et expedita disctinctio. Nam libero tempore veriations.',
+    name: '[Team Member Name]',
+    role: 'Salesforce & CX Practice Lead',
+    description: 'Multi-cloud Salesforce architect specialising in Sales Cloud, Service Cloud, and seamless SAP–Salesforce integrations.',
     avatar: '/images/team/2.jpg',
   },
   {
-    name: 'David Osei',
-    role: 'Finance Consultant',
-    description: 'Et harum quidem rerum facilis est et expedita disctinctio. Nam libero tempore veriations.',
+    name: '[Team Member Name]',
+    role: 'Head of Engineering',
+    description: 'Leads custom application development, data platforms, and AI-powered automation across all client engagements.',
     avatar: '/images/team/3.jpg',
-  },
-  {
-    name: 'Priya Nair',
-    role: 'Business Advisor',
-    description: 'Et harum quidem rerum facilis est et expedita disctinctio. Nam libero tempore veriations.',
-    avatar: '/images/team/4.jpg',
-  },
-  {
-    name: 'James Whitfield',
-    role: 'IT Consultant',
-    description: 'Et harum quidem rerum facilis est et expedita disctinctio. Nam libero tempore veriations.',
-    avatar: '/images/team/5.jpg',
-  },
-  {
-    name: 'Sara Ahmed',
-    role: 'Senior Consultant',
-    description: 'Et harum quidem rerum facilis est et expedita disctinctio. Nam libero tempore veriations.',
-    avatar: '/images/team/6.jpg',
   },
 ]
 
@@ -83,7 +65,6 @@ interface FormState {
 }
 
 export default function AboutPage() {
-  const { trust } = siteConfig
   const [form, setForm] = useState<FormState>({ name: '', email: '', phone: '', website: '', message: '' })
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle')
 
@@ -121,7 +102,7 @@ export default function AboutPage() {
       {/* ── Breadcrumb banner ── */}
       <div className="about-breadcrumb">
         <div className="mx-auto max-w-[var(--container-max-width)] px-6 text-center">
-          <h1 className="about-breadcrumb-title">About</h1>
+          <h1 className="about-breadcrumb-title">About Us</h1>
         </div>
       </div>
 
@@ -140,27 +121,29 @@ export default function AboutPage() {
                   onError={(e) => { e.currentTarget.src = '/images/about/about11.png' }}
                 />
                 <div className="about-inner-author-badge">
-                  <span className="about-author-name">Michael Torres</span>
-                  <span className="about-author-role">CEO &amp; Founder</span>
+                  <span className="about-author-name">[Founder Name]</span>
+                  <span className="about-author-role">Founder &amp; CEO</span>
                 </div>
               </div>
             </AnimatedSection>
 
             <AnimatedSection delay={0.15}>
               <div className="pl-0 md:pl-8">
-                <span className="sub-title-label">{trust.subTitle}</span>
-                <h2 className="section-title mb-4">We Provides Best Advice For Your Business</h2>
+                <span className="sub-title-label">About Proximsoft Solutions</span>
+                <h2 className="section-title mb-4">We Deliver Enterprise IT That Actually Works</h2>
                 <p className="text-[var(--color-text-secondary)] leading-relaxed mb-6">
-                  {trust.description}
+                  For over a decade, Proximsoft Solutions has helped US enterprises modernize the systems that run their business. We were built to fix the two biggest frustrations in enterprise IT — invoices that keep growing, and consultants who disappear right after go-live. Our work runs on three simple principles: senior people on every project, honest pricing every time, and accountability that lasts long after launch.
                 </p>
-                <ul className="about-checklist mb-8">
-                  <li>End-to-end SAP, Salesforce, Oracle &amp; Microsoft implementations</li>
-                  <li>AI-powered analytics and intelligent automation solutions</li>
-                  <li>Cross-platform integrations that eliminate data silos</li>
-                  <li>Managed services and AMS support post go-live</li>
-                  <li>A team of certified consultants with real enterprise experience</li>
+                <ul className="about-checklist mb-0">
+                  <li>Certified, senior consultants on every engagement — never juniors learning on your dime</li>
+                  <li>Full-lifecycle delivery — Advisory, Implementation, Migration, Integration, Support, and Roll-Out</li>
+                  <li>Costs typically 30 to 40 percent below the big-firm consultancy benchmark</li>
+                  <li>US-based delivery leadership with global execution capability</li>
+                  <li>Over ten years of experience across SAP, Oracle, Salesforce, Microsoft, and modern data platforms</li>
                 </ul>
-                <a className="readon" href="/contact">Discover More</a>
+                <div className="mt-10">
+                  <a className="readon" href="/contact">Discover More</a>
+                </div>
               </div>
             </AnimatedSection>
 
@@ -172,15 +155,15 @@ export default function AboutPage() {
       <div className="about-counter-band">
         <div className="mx-auto max-w-[var(--container-max-width)] px-6 py-(--section-padding-y)" style={{ position: 'relative', zIndex: 1 }}>
           <AnimatedSection className="text-center mb-10">
-            <span className="sub-title-label" style={{ color: 'rgba(255,255,255,0.7)' }}>Fun Facts</span>
-            <h2 className="section-title" style={{ color: '#ffffff' }}>Facts For Choosing Us</h2>
+            <span className="sub-title-label" style={{ color: 'rgba(255,255,255,0.7)' }}>By the Numbers</span>
+            <h2 className="section-title" style={{ color: '#ffffff' }}>Facts That Speak for Themselves</h2>
           </AnimatedSection>
           <div className="about-counter-grid">
             {[
-              { value: 100,  suffix: 'k', label: 'Happy Clients' },
-              { value: 250,  suffix: '+', label: 'Projects Done' },
-              { value: 60,   suffix: '+', label: 'Expert People' },
-              { value: 230,  suffix: 'k', label: 'Portfolios' },
+              { value: 150, suffix: '+', label: 'Happy Clients' },
+              { value: 300, suffix: '+', label: 'Projects Delivered' },
+              { value: 100, suffix: '+', label: 'Expert Consultants' },
+              { value: 10,  suffix: '+', label: 'Years of Experience' },
             ].map((stat, i) => (
               <AnimatedSection key={stat.label} delay={i * 0.08}>
                 <div className="about-counter-item">
@@ -198,6 +181,10 @@ export default function AboutPage() {
       {/* ── Team Section ── */}
       <section className="bg-white py-[var(--section-padding-y)]">
         <div className="mx-auto max-w-[var(--container-max-width)] px-6">
+          <AnimatedSection className="text-center mb-12">
+            <span className="sub-title-label">Our Leadership</span>
+            <h2 className="section-title">The People Behind the Work</h2>
+          </AnimatedSection>
           <div className="about-team-grid">
             {teamMembers.map((member, i) => (
               <AnimatedSection key={member.name} delay={i * 0.08}>
@@ -249,40 +236,43 @@ export default function AboutPage() {
               ) : (
                 <form onSubmit={handleSubmit}>
                   <span className="sub-title-label" style={{ color: 'rgba(255,255,255,0.7)' }}>Let's Talk</span>
-                  <h2 className="section-title mb-8" style={{ color: '#ffffff' }}>Request a Free Quote</h2>
+                  <h2 className="section-title mb-2" style={{ color: '#ffffff' }}>Request a Free Quote</h2>
+                  <p className="about-freequote-subline">
+                    Drop a few details below. A senior consultant — not a sales rep — will get back to you within one business day.
+                  </p>
                   <div className="grid sm:grid-cols-2 gap-x-6">
                     <div className="mb-6">
                       <input
                         name="name" type="text" required value={form.name}
-                        onChange={handleChange} placeholder="Name"
+                        onChange={handleChange} placeholder="e.g. Jane Smith"
                         className="about-freequote-input"
                       />
                     </div>
                     <div className="mb-6">
                       <input
                         name="email" type="email" required value={form.email}
-                        onChange={handleChange} placeholder="E-mail"
+                        onChange={handleChange} placeholder="you@yourcompany.com"
                         className="about-freequote-input"
                       />
                     </div>
                     <div className="mb-6">
                       <input
                         name="phone" type="text" required value={form.phone}
-                        onChange={handleChange} placeholder="Phone Number"
+                        onChange={handleChange} placeholder="+1 (___) ___-____"
                         className="about-freequote-input"
                       />
                     </div>
                     <div className="mb-6">
                       <input
                         name="website" type="text" value={form.website}
-                        onChange={handleChange} placeholder="Your Website"
+                        onChange={handleChange} placeholder="yourcompany.com"
                         className="about-freequote-input"
                       />
                     </div>
                     <div className="sm:col-span-2 mb-8">
                       <textarea
                         name="message" value={form.message}
-                        onChange={handleChange} placeholder="Your Message Here"
+                        onChange={handleChange} placeholder="What system are you working with? What are you trying to fix or build?"
                         className="about-freequote-input about-freequote-textarea"
                       />
                     </div>
@@ -294,8 +284,11 @@ export default function AboutPage() {
                     </p>
                   )}
                   <button type="submit" className="readon about-quote-submit" disabled={status === 'sending'}>
-                    {status === 'sending' ? 'Sending…' : 'Submit Now'}
+                    {status === 'sending' ? 'Sending…' : 'Get My Free Quote'}
                   </button>
+                  <p className="about-freequote-microcopy">
+                    No spam. No pushy follow-ups. Just a real reply from someone who can actually help.
+                  </p>
                 </form>
               )}
             </div>

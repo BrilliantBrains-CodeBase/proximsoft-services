@@ -41,12 +41,12 @@ export default function TrustSignals() {
   return (
     <section id="about">
       {/* ── About style5: text+counters left, about11.png right ── */}
-      <div id="rs-about" className="bg-white overflow-visible">
+      <div id="rs-about" className="bg-white">
         <div className="mx-auto max-w-[var(--container-max-width)] px-6 py-[var(--section-padding-y)]">
-          <div className="rs-about-5 grid md:grid-cols-2 gap-12 lg:gap-16 items-start">
+          <div className="rs-about-5 grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
 
             {/* Left: sub-title + heading + description + counters */}
-            <AnimatedSection className="pt-8">
+            <AnimatedSection>
               <span className="sub-title-label">{a.subTitle}</span>
               <h2 className="section-title mb-4">{a.headline}</h2>
               <p className="text-[var(--color-text-secondary)] leading-relaxed mb-8">{a.description}</p>
@@ -66,13 +66,13 @@ export default function TrustSignals() {
               </div>
             </AnimatedSection>
 
-            {/* Right: about11.png with morphin blob — pulled up so blob overlaps counter area */}
-            <AnimatedSection delay={0.15} className="about-img-col" style={{ marginTop: '-90px' }}>
+            {/* Right: about11.png with morphin blob */}
+            <AnimatedSection delay={0.15} className="about-img-col">
               <div className="relative flex justify-center md:justify-end">
                 {/* accent morphin blob behind the image */}
                 <div
                   className="morphin-blob"
-                  style={{ width: 420, height: 420, right: 30, bottom: 20 }}
+                  style={{ width: 400, height: 400, right: 40, bottom: 10 }}
                   aria-hidden="true"
                 />
                 <img

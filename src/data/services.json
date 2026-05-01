@@ -1,0 +1,186 @@
+{
+  "services": [
+    {
+      "slug": "sap-services",
+      "title": "SAP Services",
+      "shortDescription": "End-to-end SAP delivery from advisory to go-live — implementation, migration, and long-term managed services across the full SAP catalog.",
+      "iconKey": "sap",
+      "bannerTitle": "SAP Services",
+      "headline": "End-to-End SAP Delivery, From Advisory to Go-Live and Beyond",
+      "bodyParagraph1": "Whether you're rolling out SAP for the first time, planning your move to S/4HANA, or looking for a partner who can keep your existing SAP landscape running smoothly — Proximsoft handles the full lifecycle. Our SAP-certified consultants have deployed real systems for real businesses across banking, retail, manufacturing, and healthcare. We work across the entire SAP catalog — Digital Core, CX, SuccessFactors, Ariba, Concur, BTP, and Business Analytics — so whatever modules you run, you get one accountable partner who understands how the pieces fit together.",
+      "bullets": [
+        "SAP S/4HANA Cloud and On-Premise — implementation, migration, and conversion",
+        "SAP CX, SuccessFactors, Ariba, Concur, and Fieldglass — full deployment and support",
+        "Built on the SAP Activate methodology — proven, predictable, audit-ready",
+        "Long-term Application Managed Services (AMS) for stable, post-launch operations"
+      ],
+      "progressCircles": [
+        { "value": "96%", "label": "On-Time Delivery" },
+        { "value": "94%", "label": "Budget Adherence" },
+        { "value": "98%", "label": "Client Retention" }
+      ],
+      "bodyParagraph2": "Our SAP team brings more than ten years of cumulative delivery experience. Every project starts with a clear scope, fixed milestones, and senior people on the ground from day one. No outsourced juniors. No surprise change orders. Just SAP done right — at a cost typically 30 to 40 percent below the big-firm benchmark.",
+      "testimonial": {
+        "quote": "We'd already burned six months and a serious chunk of budget with another firm before we found Proximsoft. They scoped the work tightly, hit every milestone, and stayed on after launch to fine-tune the small things. Smoothest enterprise rollout we've ever run.",
+        "name": "Client Name",
+        "title": "VP, Information Technology"
+      }
+    },
+    {
+      "slug": "oracle-services",
+      "title": "Oracle Services",
+      "shortDescription": "Database administration, performance tuning, and full Oracle Cloud migrations — from EBS and JD Edwards to Fusion Cloud Applications.",
+      "iconKey": "oracle",
+      "bannerTitle": "Oracle Services",
+      "headline": "Modernize Your Oracle Stack with Confidence",
+      "bodyParagraph1": "From database administration and performance tuning to full Oracle Cloud Infrastructure migrations, Proximsoft delivers Oracle services that move your business forward — not sideways. We help enterprises get more from their existing Oracle investments and plan the move to cloud-native platforms when the timing makes sense. Whether you're running Oracle E-Business Suite, JD Edwards, PeopleSoft, or Fusion Cloud Applications, our certified consultants bring the depth and discipline your Oracle environment deserves.",
+      "bullets": [
+        "Oracle Cloud Infrastructure (OCI) migration, architecture, and managed services",
+        "Oracle E-Business Suite, JD Edwards, and PeopleSoft implementation and support",
+        "Oracle Fusion Cloud Applications — Finance, HCM, SCM, and CX",
+        "Database administration, performance tuning, and 24/7 production support"
+      ],
+      "progressCircles": [
+        { "value": "95%", "label": "Migration Success Rate" },
+        { "value": "91%", "label": "Performance Improvement" },
+        { "value": "99%", "label": "Database Uptime" }
+      ],
+      "bodyParagraph2": "We approach every Oracle engagement the same way — start with a working assessment, agree on a clean scope, deliver in phases, and validate against business KPIs. The result is an Oracle environment that runs faster, costs less, and stays predictable through every release cycle.",
+      "testimonial": {
+        "quote": "Our Oracle estate had grown messy over a decade of acquisitions. Proximsoft mapped it in two weeks, built a phased migration plan, and executed without a single production outage. We came out the other side with a cleaner architecture and noticeably lower cloud costs.",
+        "name": "Client Name",
+        "title": "Chief Information Officer"
+      }
+    },
+    {
+      "slug": "salesforce-services",
+      "title": "Salesforce Services",
+      "shortDescription": "Sales, Service, Marketing, Commerce, and CPQ — plus the Salesforce-to-SAP integration expertise few partners can match.",
+      "iconKey": "salesforce",
+      "bannerTitle": "Salesforce Services",
+      "headline": "A CRM Is Only As Useful As the Systems It Connects To",
+      "bodyParagraph1": "Salesforce is powerful — but it only delivers when it's set up correctly and connected cleanly to the rest of your business. Proximsoft brings ten years of Salesforce delivery experience across Sales Cloud, Service Cloud, Marketing Cloud, Commerce Cloud, and CPQ. We're also one of the few partners that genuinely specializes in Salesforce-to-SAP integration — so your sales, service, finance, and operations teams finally share a single view of every customer.",
+      "bullets": [
+        "Sales, Service, Marketing, Commerce, and CPQ Cloud implementation",
+        "Salesforce-to-SAP integration with clean two-way data sync",
+        "Custom Salesforce development, Lightning components, and Apex",
+        "Ongoing admin support, optimization, and managed services"
+      ],
+      "progressCircles": [
+        { "value": "93%", "label": "Implementation On-Time" },
+        { "value": "89%", "label": "User Adoption Rate" },
+        { "value": "97%", "label": "Integration Success" }
+      ],
+      "bodyParagraph2": "We treat Salesforce as a business platform, not a software project. That means starting with the workflows that actually drive revenue, configuring the system around how your team really sells and serves, and skipping the features that look impressive in a demo but never get used.",
+      "testimonial": {
+        "quote": "Proximsoft connected our Salesforce platform to SAP in about ten weeks — work we'd been quoted six months for elsewhere. The team explained every decision in plain English, and the cost was a fraction of what the bigger names had pitched.",
+        "name": "Client Name",
+        "title": "Director of Operations"
+      }
+    },
+    {
+      "slug": "data-science-services",
+      "title": "Data Science Services",
+      "shortDescription": "From data engineering and warehousing to advanced analytics and self-service BI — turn unused enterprise data into decision-grade intelligence.",
+      "iconKey": "data",
+      "bannerTitle": "Data Science Services",
+      "headline": "You Have the Data. We Help You Decide What to Do With It.",
+      "bodyParagraph1": "Most enterprises have years of customer, operational, and financial data sitting unused across disconnected systems. Proximsoft turns that data into clear, decision-grade intelligence. From data engineering and warehousing to advanced analytics and self-service BI, our data scientists and engineers help you stop reporting backward and start steering forward — with dashboards your executives actually open and forecasts your operators actually trust.",
+      "bullets": [
+        "Big data engineering, data lake, and warehouse architecture",
+        "Predictive analytics, forecasting models, and statistical modeling",
+        "Power BI, Tableau, and SAP Analytics Cloud — design, deployment, governance",
+        "Real-time dashboards and executive KPI reporting"
+      ],
+      "progressCircles": [
+        { "value": "92%", "label": "Forecast Accuracy" },
+        { "value": "88%", "label": "Reporting Time Reduction" },
+        { "value": "94%", "label": "Decision Velocity" }
+      ],
+      "bodyParagraph2": "We build data programs that survive contact with the real world — pragmatic models, clear governance, and dashboards designed for the people who'll actually use them. No black-box algorithms. No 200-page reports nobody reads. Just data that earns its keep.",
+      "testimonial": {
+        "quote": "We had data everywhere and insight nowhere. Proximsoft consolidated five sources into one warehouse, built three executive dashboards, and trained our team in eight weeks. We finally stopped guessing in board meetings.",
+        "name": "Client Name",
+        "title": "Chief Financial Officer"
+      }
+    },
+    {
+      "slug": "ai-machine-learning",
+      "title": "AI & Machine Learning",
+      "shortDescription": "RPA, generative AI, computer vision, and conversational AI — deployed against real bottlenecks with measurable ROI inside six months.",
+      "iconKey": "ai",
+      "bannerTitle": "AI & Machine Learning Services",
+      "headline": "AI That Solves Real Problems — Not Demos That Look Good in Slides",
+      "bodyParagraph1": "Most enterprise AI projects stall because they were started by technology teams and ignored by the business. Proximsoft does it the other way around. We start with the bottlenecks slowing your operations down — repetitive manual work, slow document processing, customer service backlogs — and design AI and machine learning solutions that produce measurable results inside three to six months. From robotic process automation to natural language processing, computer vision, and generative AI, our team builds tools your people actually use.",
+      "bullets": [
+        "Robotic Process Automation (RPA) — UiPath, Automation Anywhere, SAP iRPA",
+        "Generative AI and large language model integration for enterprise workflows",
+        "Computer vision for quality control, document processing, and security",
+        "Conversational AI, chatbots, and intelligent customer service automation"
+      ],
+      "progressCircles": [
+        { "value": "80%", "label": "Manual Work Reduction" },
+        { "value": "3.5×", "label": "Process Speed Increase" },
+        { "value": "94%", "label": "Automation Accuracy" }
+      ],
+      "bodyParagraph2": "We design AI engagements like business projects — clear ROI targets, fast prototypes, measurable rollouts. Most clients see automation paybacks within twelve months. The rest see them within eighteen. Either way, you'll know exactly what you're getting before we write a line of code.",
+      "testimonial": {
+        "quote": "We brought Proximsoft in to automate our claims intake — six analysts spending half their day on manual data entry. Eight weeks later, the bots handle 78 percent of the volume and our team is finally working on the cases that need real judgment.",
+        "name": "Client Name",
+        "title": "VP, Operations"
+      }
+    },
+    {
+      "slug": "application-development",
+      "title": "Application Development",
+      "shortDescription": "Custom enterprise applications built in tight agile sprints — microservices, API-first, cloud-native, with clear demos every two weeks.",
+      "iconKey": "appdev",
+      "bannerTitle": "Application Development Services",
+      "headline": "When Off-the-Shelf Doesn't Fit, We Build Software That Does",
+      "bodyParagraph1": "Some workflows are too specific, too strategic, or too unique to fit any packaged software. That's where custom application development earns its keep. Proximsoft builds enterprise-grade applications using modern, API-first architectures — from full microservices platforms to internal tools that simply solve a specific business problem. Our developers work in tight, agile sprints with clear demos every two weeks, so you see what you're getting before the bill arrives.",
+      "bullets": [
+        "Custom enterprise application development — Java, .NET, Node.js, Python",
+        "Microservices architecture, API-first design, and cloud-native deployment",
+        "DevOps automation, CI/CD pipelines, and containerization with Docker and Kubernetes",
+        "Modernization of legacy applications and re-platforming to cloud"
+      ],
+      "progressCircles": [
+        { "value": "95%", "label": "On-Time Sprint Delivery" },
+        { "value": "90%", "label": "Test Coverage" },
+        { "value": "99%", "label": "Production Stability" }
+      ],
+      "bodyParagraph2": "We don't believe in big-bang launches. Every application we build ships in increments — useful from day thirty, complete by day ninety. That keeps risk low, lets your team adapt as priorities shift, and means the software is paying for itself long before it's officially \"done.\"",
+      "testimonial": {
+        "quote": "We needed a custom underwriting platform built fast — eight weeks, no slippage. Proximsoft delivered it on day fifty-four. Their developers understood our domain better than we expected, and the code quality has held up beautifully a year later.",
+        "name": "Client Name",
+        "title": "Head of Product"
+      }
+    },
+    {
+      "slug": "web-portal-mobile-apps",
+      "title": "Web, Portal & Mobile Apps",
+      "shortDescription": "Modern websites, B2B portals, and native mobile apps — built with real engineering, real UX thinking, and full post-launch support.",
+      "iconKey": "web",
+      "bannerTitle": "Website, Portal & Mobile App Development",
+      "headline": "Customer-Facing Software Is Your Brand. We Build It Like It Matters.",
+      "bodyParagraph1": "Your website, customer portal, and mobile app are often the first — and sometimes the only — interaction your customers have with you. They deserve real engineering, real design, and real UX thinking. Proximsoft builds modern websites, B2B and customer portals, and native and cross-platform mobile applications that load fast, look sharp, and stay reliable as your business scales. From discovery through design, build, launch, and post-launch support, we own the full delivery.",
+      "bullets": [
+        "Modern websites and corporate portals — React, Next.js, headless CMS",
+        "Self-service customer portals, vendor portals, and partner portals",
+        "Native iOS and Android mobile apps + cross-platform with React Native and Flutter",
+        "Performance optimization, accessibility (WCAG), and ongoing managed support"
+      ],
+      "progressCircles": [
+        { "value": "97%", "label": "Mobile Page Speed" },
+        { "value": "4.7★", "label": "Avg App Store Rating" },
+        { "value": "92%", "label": "User Task Completion" }
+      ],
+      "bodyParagraph2": "We treat every front-end project the way a product team would — clear user research, lightweight prototypes, design that respects your brand, and engineering that respects your roadmap. The result is software your customers actually like using, and your team is genuinely proud to ship.",
+      "testimonial": {
+        "quote": "Our customer portal was eight years old and embarrassing. Proximsoft rebuilt it from scratch in fourteen weeks — clean design, proper mobile experience, real self-service. Customer support tickets dropped 40 percent in the first quarter after launch.",
+        "name": "Client Name",
+        "title": "Marketing Director"
+      }
+    }
+  ]
+}

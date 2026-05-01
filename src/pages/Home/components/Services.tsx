@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { AnimatedSection } from '@/components/AnimatedSection'
 import { siteConfig } from '@/lib/content'
 
@@ -40,12 +41,12 @@ export default function Services() {
                   {/* Content — ::before/::after domes live here */}
                   <div className="content-part">
                     <h4 className="title">
-                      <a href={item.href ?? '#contact-form'}>{item.title}</a>
+                      <Link to={item.href ?? '/services'}>{item.title}</Link>
                     </h4>
                     <p className="desc">{item.description}</p>
                     {/* + button — hidden below fold, rises on hover */}
                     <div className="btn-part">
-                      <a href={item.href ?? '#contact-form'} aria-label={`Learn more about ${item.title}`}>+</a>
+                      <Link to={item.href ?? '/services'} aria-label={`Learn more about ${item.title}`}>+</Link>
                     </div>
                   </div>
                 </div>

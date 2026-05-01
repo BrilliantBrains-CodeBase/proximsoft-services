@@ -1,10 +1,8 @@
 import { Link } from 'react-router-dom'
 import { siteConfig } from '@/lib/content'
-import blogsData from '@/data/blogs.json'
 
 export default function Footer() {
   const { contact, name, footer } = siteConfig
-  const latestPosts = blogsData.posts.slice(0, 3)
 
   return (
     <footer id="rs-footer" className="rs-footer">
@@ -23,7 +21,7 @@ export default function Footer() {
       {/* ── Main footer content (bg-wrap) ── */}
       <div className="footer-bg-wrap">
         <div className="mx-auto max-w-[var(--container-max-width)] px-6 py-16">
-          <div className="grid md:grid-cols-3 gap-10">
+          <div className="footer-3col-grid">
 
             {/* Col 1: Brand */}
             <div className="footer-about-widget">
@@ -41,7 +39,7 @@ export default function Footer() {
                 <span className="hidden footer-logo-text">{name}</span>
               </div>
               <p className="footer-about-desc">{footer.tagline}</p>
-              <a href="#about" className="readon footer-discover-btn">Discover More</a>
+              <Link to="/about" className="readon footer-discover-btn">Discover More</Link>
             </div>
 
             {/* Col 2: Contact Info */}
@@ -67,24 +65,16 @@ export default function Footer() {
               </ul>
             </div>
 
-            {/* Col 3: Latest Posts */}
+            {/* Col 3: Services */}
             <div>
-              <h4 className="footer-widget-title">Latest Posts</h4>
-              <div className="footer-posts">
-                {latestPosts.map((post) => (
-                  <div key={post.slug} className="footer-post-item">
-                    <Link to={`/blog/${post.slug}`} className="footer-post-thumb">
-                      <img src={post.image} alt={post.title} loading="lazy" />
-                    </Link>
-                    <div className="footer-post-info">
-                      <Link to={`/blog/${post.slug}`} className="footer-post-title">{post.title}</Link>
-                      <div className="footer-post-date">
-                        <CalendarIcon /> {post.date}
-                      </div>
-                    </div>
-                  </div>
+              <h4 className="footer-widget-title">Our Services</h4>
+              <ul className="footer-service-list">
+                {footer.serviceLinks.map((link) => (
+                  <li key={link.href}>
+                    <Link to={link.href}>{link.text}</Link>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </div>
           </div>
         </div>
@@ -120,9 +110,6 @@ function MailIcon() {
 }
 function ClockIcon() {
   return <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
-}
-function CalendarIcon() {
-  return <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" strokeWidth="2" style={{ display: 'inline', marginRight: '4px', verticalAlign: 'middle' }}><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
 }
 function FacebookIcon() {
   return <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
