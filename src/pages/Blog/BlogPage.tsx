@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, useSearchParams } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import { AnimatedSection } from '@/components/AnimatedSection'
 import { siteConfig } from '@/lib/content'
@@ -7,11 +7,26 @@ import BlogSidebar from './BlogSidebar'
 
 export default function BlogPage() {
   const { posts } = blogsData
+  const [searchParams] = useSearchParams()
+  const query = searchParams.get('q')?.trim() ?? ''
+
+  const filteredPosts = query
+    ? posts.filter((p) => {
+        const q = query.toLowerCase()
+        return (
+          p.title.toLowerCase().includes(q) ||
+          p.description.toLowerCase().includes(q) ||
+          p.category.toLowerCase().includes(q) ||
+          p.author.toLowerCase().includes(q) ||
+          p.tags.some((t) => t.toLowerCase().includes(q))
+        )
+      })
+    : posts
 
   return (
     <>
       <Helmet>
-        <title>Blog — {siteConfig.name}</title>
+        <title>{query ? `"${query}" — Blog` : 'Blog'} — {siteConfig.name}</title>
         <meta
           name="description"
           content="Practical insights on enterprise technology — SAP, Salesforce, AI strategy, and digital transformation from the Proximsoft team."
@@ -37,42 +52,51 @@ export default function BlogPage() {
 
             {/* Post list — left column */}
             <div className="blog-post-list">
-              {posts.map((post, i) => (
-                <AnimatedSection key={post.slug} delay={i * 0.08}>
-                  <article className="blog-inner-wrap">
-                    <div className="image-part">
-                      <Link to={`/blog/${post.slug}`}>
-                        <img src={post.image} alt={post.title} loading="lazy" />
-                      </Link>
-                    </div>
-                    <div className="content-part">
-                      <h3 className="title">
-                        <Link to={`/blog/${post.slug}`}>{post.title}</Link>
-                      </h3>
-                      <ul className="blog-meta-list">
-                        <li>
-                          <CalendarIcon />
-                          {post.date}
-                        </li>
-                        <li>
-                          <UserIcon />
-                          {post.author}
-                        </li>
-                        <li>
-                          <BookIcon />
-                          <Link to={`/blog/${post.slug}`}>{post.category}</Link>
-                        </li>
-                      </ul>
-                      <p className="desc">{post.description}</p>
-                      <div className="btn-part">
-                        <Link className="readon-arrow" to={`/blog/${post.slug}`}>
-                          Continue Reading <ArrowIcon />
+
+              {/* Search results label */}
+              {query && (
+                <div className="blog-search-label">
+                  {filteredPosts.length > 0
+                    ? <>Showing <strong>{filteredPosts.length}</strong> result{filteredPosts.length !== 1 ? 's' : ''} for <strong>"{query}"</strong></>
+                    : <>No results for <strong>"{query}"</strong></>
+                  }
+                  <Link to="/blog" className="blog-search-clear" aria-label="Clear search">✕ Clear</Link>
+                </div>
+              )}
+
+              {filteredPosts.length > 0 ? (
+                filteredPosts.map((post, i) => (
+                  <AnimatedSection key={post.slug} delay={i * 0.08}>
+                    <article className="blog-inner-wrap">
+                      <div className="image-part">
+                        <Link to={`/blog/${post.slug}`}>
+                          <img src={post.image} alt={post.title} loading="lazy" />
                         </Link>
                       </div>
-                    </div>
-                  </article>
-                </AnimatedSection>
-              ))}
+                      <div className="content-part">
+                        <h3 className="title">
+                          <Link to={`/blog/${post.slug}`}>{post.title}</Link>
+                        </h3>
+                        <ul className="blog-meta-list">
+                          <li><CalendarIcon />{post.date}</li>
+                          <li><UserIcon />{post.author}</li>
+                          <li><BookIcon /><Link to={`/blog/${post.slug}`}>{post.category}</Link></li>
+                        </ul>
+                        <p className="desc">{post.description}</p>
+                        <div className="btn-part">
+                          <Link className="readon-arrow" to={`/blog/${post.slug}`}>
+                            Continue Reading <ArrowIcon />
+                          </Link>
+                        </div>
+                      </div>
+                    </article>
+                  </AnimatedSection>
+                ))
+              ) : (
+                <div className="blog-no-results">
+                  <p>Try a different keyword, or <Link to="/blog">browse all posts</Link>.</p>
+                </div>
+              )}
             </div>
 
             {/* Sidebar — right column */}

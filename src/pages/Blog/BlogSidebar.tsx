@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import { Link, useNavigate, useSearchParams } from 'react-router-dom'
 
 interface Post {
   slug: string
@@ -14,19 +14,29 @@ interface Props {
 }
 
 export default function BlogSidebar({ posts }: Props) {
-  const [searchValue, setSearchValue] = useState('')
+  const navigate = useNavigate()
+  const [searchParams] = useSearchParams()
+  const [searchValue, setSearchValue] = useState(searchParams.get('q') ?? '')
+
+  // Keep input in sync when the URL param changes (e.g. user clears search)
+  useEffect(() => {
+    setSearchValue(searchParams.get('q') ?? '')
+  }, [searchParams])
 
   const recentPosts = posts.slice(0, 5)
   const categories = Array.from(new Set(posts.map((p) => p.category)))
+
+  function handleSearch(e: React.FormEvent) {
+    e.preventDefault()
+    const q = searchValue.trim()
+    navigate(q ? `/blog?q=${encodeURIComponent(q)}` : '/blog')
+  }
 
   return (
     <aside className="blog-sidebar">
       {/* Search */}
       <div className="sidebar-grid mb-50">
-        <form
-          className="sidebar-search-bar"
-          onSubmit={(e) => e.preventDefault()}
-        >
+        <form className="sidebar-search-bar" onSubmit={handleSearch}>
           <input
             type="text"
             placeholder="Search..."
@@ -74,7 +84,7 @@ export default function BlogSidebar({ posts }: Props) {
         <ul className="sidebar-categories-list">
           {categories.map((cat) => (
             <li key={cat}>
-              <Link to="/blog">{cat}</Link>
+              <Link to={`/blog?q=${encodeURIComponent(cat)}`}>{cat}</Link>
             </li>
           ))}
         </ul>

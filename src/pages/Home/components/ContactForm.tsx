@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { AnimatedSection } from '@/components/AnimatedSection'
 import { siteConfig } from '@/lib/content'
 
@@ -11,8 +12,9 @@ interface FormState {
 }
 
 export default function ContactForm() {
+  const navigate = useNavigate()
   const [form, setForm] = useState<FormState>({ name: '', email: '', phone: '', website: '', message: '' })
-  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle')
+  const [status, setStatus] = useState<'idle' | 'sending' | 'error'>('idle')
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }))
@@ -20,16 +22,14 @@ export default function ContactForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setStatus('sending')
-    const endpoint = import.meta.env.VITE_FORM_ENDPOINT
-    if (!endpoint) { setStatus('error'); return }
+    const endpoint = 'https://script.google.com/macros/s/AKfycbysDseK3uADYyStECiGZM3QcrdRXBWh3f5awndn10gFE0G-PCwVxwUA-LW9xbsk-GsGlg/exec'
     try {
       await fetch(endpoint, {
         method: 'POST',
         headers: { 'Content-Type': 'text/plain;charset=utf-8' },
         body: JSON.stringify({ ...form, source: siteConfig.name, timestamp: new Date().toISOString() }),
       })
-      setStatus('success')
-      setForm({ name: '', email: '', phone: '', website: '', message: '' })
+      navigate('/thank-you')
     } catch {
       setStatus('error')
     }
@@ -58,18 +58,7 @@ export default function ContactForm() {
               <span className="sub-title-label">{subTitle}</span>
               <h2 className="section-title mb-8">{headline}</h2>
 
-              {status === 'success' ? (
-                <div className="py-10 text-center">
-                  <div className="text-4xl mb-3" style={{ color: 'var(--color-primary)' }}>✓</div>
-                  <h3 className="text-lg font-semibold" style={{ fontFamily: 'var(--font-heading)' }}>
-                    Proposal request received!
-                  </h3>
-                  <p className="text-[var(--color-text-secondary)] text-sm mt-2">
-                    We'll prepare a tailored proposal and get back to you shortly.
-                  </p>
-                </div>
-              ) : (
-                <form onSubmit={handleSubmit}>
+              <form onSubmit={handleSubmit}>
                   <div className="grid sm:grid-cols-2 gap-x-6">
                     <div className="mb-8">
                       <input name="name" type="text" required value={form.name}
@@ -106,7 +95,6 @@ export default function ContactForm() {
                     {status === 'sending' ? 'Sending…' : submitText}
                   </button>
                 </form>
-              )}
             </div>
           </AnimatedSection>
         </div>

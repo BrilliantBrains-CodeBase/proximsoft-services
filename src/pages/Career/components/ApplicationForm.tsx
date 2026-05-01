@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { Upload } from 'lucide-react'
 import { AnimatedSection } from '@/components/AnimatedSection'
 import { siteConfig } from '@/lib/content'
@@ -25,9 +26,10 @@ interface Props {
 }
 
 export default function ApplicationForm({ prefillPosition }: Props) {
+  const navigate = useNavigate()
   const [form, setForm] = useState<FormState>({ ...EMPTY, desiredPosition: prefillPosition ?? '' })
   const [resume, setResume] = useState<File | null>(null)
-  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle')
+  const [status, setStatus] = useState<'idle' | 'sending' | 'error'>('idle')
   const fileInputRef = useRef<HTMLInputElement>(null)
 
   useEffect(() => {
@@ -54,20 +56,33 @@ export default function ApplicationForm({ prefillPosition }: Props) {
     if (!resume) { alert('Please upload your resume (PDF).'); return }
     setStatus('sending')
 
-    const endpoint = import.meta.env.VITE_FORM_ENDPOINT
-    if (!endpoint) { setStatus('error'); return }
+    const endpoint = 'https://script.google.com/macros/s/AKfycbysDseK3uADYyStECiGZM3QcrdRXBWh3f5awndn10gFE0G-PCwVxwUA-LW9xbsk-GsGlg/exec'
 
     try {
-      const fd = new FormData()
-      Object.entries(form).forEach(([k, v]) => fd.append(k, v))
-      fd.append('resume', resume, resume.name)
-      fd.append('source', siteConfig.name)
-      fd.append('timestamp', new Date().toISOString())
+      // Read PDF as base64 so Google Apps Script can save it to Drive
+      const resumeBase64 = await new Promise<string>((resolve, reject) => {
+        const reader = new FileReader()
+        reader.onload = () => {
+          const result = reader.result as string
+          // Strip "data:application/pdf;base64," prefix
+          resolve(result.split(',')[1])
+        }
+        reader.onerror = reject
+        reader.readAsDataURL(resume)
+      })
 
-      await fetch(endpoint, { method: 'POST', body: fd })
-      setStatus('success')
-      setForm(EMPTY)
-      setResume(null)
+      await fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify({
+          ...form,
+          resumeBase64,
+          resumeFileName: resume.name,
+          source: siteConfig.name,
+          timestamp: new Date().toISOString(),
+        }),
+      })
+      navigate('/thank-you')
     } catch {
       setStatus('error')
     }
@@ -109,18 +124,7 @@ export default function ApplicationForm({ prefillPosition }: Props) {
               <span className="sub-title-label">Apply Now</span>
               <h2 className="section-title mb-8">Submit Your Application</h2>
 
-              {status === 'success' ? (
-                <div className="py-10 text-center">
-                  <div className="text-4xl mb-3" style={{ color: 'var(--color-accent)' }}>✓</div>
-                  <h3 className="text-lg font-semibold" style={{ fontFamily: 'var(--font-heading)' }}>
-                    Application received!
-                  </h3>
-                  <p className="text-[var(--color-text-secondary)] text-sm mt-2">
-                    We'll review your profile and be in touch soon.
-                  </p>
-                </div>
-              ) : (
-                <form onSubmit={handleSubmit}>
+              <form onSubmit={handleSubmit}>
                   <div className="grid sm:grid-cols-2 gap-x-6">
                     <div className="mb-6">
                       <label className="form-label">First Name *</label>
@@ -212,7 +216,6 @@ export default function ApplicationForm({ prefillPosition }: Props) {
                     {status === 'sending' ? 'Submitting…' : 'Submit Application →'}
                   </button>
                 </form>
-              )}
             </div></div>
           </AnimatedSection>
         </div>

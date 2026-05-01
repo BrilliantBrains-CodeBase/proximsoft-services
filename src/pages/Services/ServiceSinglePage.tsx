@@ -55,6 +55,7 @@ export default function ServiceSinglePage() {
         <div className="mx-auto max-w-[var(--container-max-width)] px-6">
           <div className="service-single-layout">
 
+
             {/* Left column — main content */}
             <div className="service-single-main">
               <AnimatedSection>
@@ -146,7 +147,88 @@ export default function ServiceSinglePage() {
           </div>
         </div>
       </div>
+
+      {/* Capabilities section */}
+      {'capabilities' in service && Array.isArray(service.capabilities) && service.capabilities.length > 0 && (
+        <div className="capabilities-section">
+          <div className="capabilities-section-inner">
+            <AnimatedSection>
+              <div className="capabilities-header">
+                <p className="capabilities-label">Service Extent</p>
+                <h2 className="capabilities-title">Our Capabilities</h2>
+                <p className="capabilities-subtitle">
+                  Eight delivery stages — from first strategy call to long-term operations — covering everything your {service.title.toLowerCase()} program needs.
+                </p>
+              </div>
+              <div className="capabilities-grid">
+                {(service.capabilities as { stage: string; description: string }[]).map((cap, i) => (
+                  <div key={i} className="capability-card">
+                    <span className="capability-card-number" aria-hidden="true">
+                      {String(i + 1).padStart(2, '0')}
+                    </span>
+                    <div className="capability-card-icon" aria-hidden="true">
+                      <CapabilityIcon stage={cap.stage} />
+                    </div>
+                    <h3 className="capability-card-stage">{cap.stage}</h3>
+                    <p className="capability-card-desc">{cap.description}</p>
+                  </div>
+                ))}
+              </div>
+            </AnimatedSection>
+          </div>
+        </div>
+      )}
     </>
+  )
+}
+
+function CapabilityIcon({ stage }: { stage: string }) {
+  const icons: Record<string, JSX.Element> = {
+    Advisory: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="12" r="10" /><path d="M12 16v-4m0-4h.01" />
+      </svg>
+    ),
+    Implementation: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+        <polyline points="16 3 21 3 21 8" /><line x1="4" y1="20" x2="21" y2="3" /><polyline points="21 16 21 21 16 21" /><line x1="15" y1="15" x2="21" y2="21" /><line x1="4" y1="4" x2="9" y2="9" />
+      </svg>
+    ),
+    Migration: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M5 12h14m-7-7 7 7-7 7" />
+      </svg>
+    ),
+    Conversion: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M17 1l4 4-4 4" /><path d="M3 11V9a4 4 0 0 1 4-4h14" /><path d="M7 23l-4-4 4-4" /><path d="M21 13v2a4 4 0 0 1-4 4H3" />
+      </svg>
+    ),
+    Upgrade: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+        <polyline points="17 11 12 6 7 11" /><line x1="12" y1="18" x2="12" y2="6" />
+      </svg>
+    ),
+    Integration: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="18" cy="5" r="3" /><circle cx="6" cy="12" r="3" /><circle cx="18" cy="19" r="3" /><line x1="8.59" y1="13.51" x2="15.42" y2="17.49" /><line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
+      </svg>
+    ),
+    Support: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3.09 5.18 2 2 0 0 1 5.07 3h3a2 2 0 0 1 2 1.72c.12.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L9.09 10.9a16 16 0 0 0 6.01 6.01l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.58 2.81.7A2 2 0 0 1 22 17z" />
+      </svg>
+    ),
+    'Roll-Out': (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="12" r="10" /><line x1="2" y1="12" x2="22" y2="12" /><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+      </svg>
+    ),
+  }
+  return icons[stage] ?? (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="3" y="3" width="18" height="18" rx="2" />
+    </svg>
   )
 }
 

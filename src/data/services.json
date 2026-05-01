@@ -14,6 +14,40 @@
         "Built on the SAP Activate methodology — proven, predictable, audit-ready",
         "Long-term Application Managed Services (AMS) for stable, post-launch operations"
       ],
+      "capabilities": [
+        {
+          "stage": "Advisory",
+          "description": "We answer the strategic questions before touching a single configuration — S/4HANA Cloud vs. on-premise, greenfield vs. brownfield, which modules first, what to retire. Output: a board-ready roadmap with clear cost ranges, timelines, and risk paths."
+        },
+        {
+          "stage": "Implementation",
+          "description": "End-to-end deployment of S/4HANA, Business One, ByDesign, SuccessFactors, Ariba, Concur, and the full CX suite — SAP Activate methodology from Discover through Run, with named senior consultants accountable at every phase."
+        },
+        {
+          "stage": "Migration",
+          "description": "ECC to S/4HANA is our deepest specialty. We handle every path — system conversion, selective data transition, or new implementation — including custom code remediation, business partner conversion, and the move to the simplified S/4HANA data model."
+        },
+        {
+          "stage": "Conversion",
+          "description": "Technical and functional system conversions to S/4HANA that preserve years of historical data and custom logic — modernizing the platform without disrupting the business-critical reporting your teams depend on daily."
+        },
+        {
+          "stage": "Upgrade",
+          "description": "S/4HANA release cycles, Enhancement Packs, Support Packs, kernel upgrades, and Fiori modernizations — every upgrade is rehearsed through a complete cycle in your QA environment before a single change touches production."
+        },
+        {
+          "stage": "Integration",
+          "description": "SAP-to-Salesforce, Oracle, Microsoft, and B2B integrations with suppliers, distributors, and banks — built natively on SAP Integration Suite (CPI), Process Orchestration (PO), and the Extension Suite."
+        },
+        {
+          "stage": "Support",
+          "description": "Application Managed Services covering L1 through L4 — incident response, root-cause analysis, enhancement requests, performance tuning, and 24/7 production stability with predictable SLAs and transparent monthly reporting."
+        },
+        {
+          "stage": "Roll-Out",
+          "description": "Multi-country and multi-entity rollouts of standardized SAP templates — with full localization for tax regimes, statutory reporting formats, and regulatory compliance across every region you operate in."
+        }
+      ],
       "progressCircles": [
         { "value": "96%", "label": "On-Time Delivery" },
         { "value": "94%", "label": "Budget Adherence" },
@@ -39,6 +73,40 @@
         "Oracle E-Business Suite, JD Edwards, and PeopleSoft implementation and support",
         "Oracle Fusion Cloud Applications — Finance, HCM, SCM, and CX",
         "Database administration, performance tuning, and 24/7 production support"
+      ],
+      "capabilities": [
+        {
+          "stage": "Advisory",
+          "description": "An honest landscape assessment across your EBS, JDE, PeopleSoft, Siebel, and standalone database environments — followed by a phased modernization roadmap that balances cost, risk, and your actual business priorities."
+        },
+        {
+          "stage": "Implementation",
+          "description": "Full implementation of Oracle Fusion Cloud — Finance (ERP), HCM, SCM, and CX — plus on-premise EBS, JDE, and PeopleSoft for enterprises with specific compliance or data sovereignty requirements."
+        },
+        {
+          "stage": "Migration",
+          "description": "Oracle workload migration to OCI, AWS, or Azure — database, applications, and middleware — with parallel-run validation cycles so your finance team stays confident all the way through cutover."
+        },
+        {
+          "stage": "Conversion",
+          "description": "Database version conversions from 12c to 19c to 23ai, schema modernization, and application re-architecture from legacy Forms-and-Reports to Oracle APEX or modern cloud-native frameworks."
+        },
+        {
+          "stage": "Upgrade",
+          "description": "Oracle EBS R12 upgrades, JDE upgrade paths, Oracle Database upgrades with minimal downtime, and quarterly Fusion Cloud release management including impact assessment and regression testing."
+        },
+        {
+          "stage": "Integration",
+          "description": "Oracle Integration Cloud (OIC) and SOA Suite connecting Oracle environments to Salesforce, SAP, ServiceNow, and downstream analytics platforms via REST, SOAP, and purpose-built APIs."
+        },
+        {
+          "stage": "Support",
+          "description": "24/7 DBA services covering performance tuning, backup and recovery, patching, and Real Application Clusters (RAC) management — available as continuous AMS or targeted support engagements."
+        },
+        {
+          "stage": "Roll-Out",
+          "description": "Multi-entity Fusion Cloud rollouts with localization, currency configurations, and statutory reporting setups for organizations operating across multiple regulatory jurisdictions simultaneously."
+        }
       ],
       "progressCircles": [
         { "value": "95%", "label": "Migration Success Rate" },
@@ -66,6 +134,40 @@
         "Custom Salesforce development, Lightning components, and Apex",
         "Ongoing admin support, optimization, and managed services"
       ],
+      "capabilities": [
+        {
+          "stage": "Advisory",
+          "description": "Cloud strategy across Sales, Service, Marketing, Commerce, Experience, and Field Service — plus licensing optimization and integration architecture to prevent over-customization, license sprawl, and underused features."
+        },
+        {
+          "stage": "Implementation",
+          "description": "Sales Cloud, Service Cloud, Marketing Cloud, Commerce Cloud, Experience Cloud, Field Service, Health Cloud, Financial Services Cloud, CPQ, and Revenue Cloud — sprint-based delivery with bi-weekly working demos."
+        },
+        {
+          "stage": "Migration",
+          "description": "Migration from legacy CRMs — Dynamics, SAP CRM, Siebel, HubSpot, Zoho — to Salesforce, including historical data preservation, field mapping, Classic-to-Lightning transitions, and end-user retraining."
+        },
+        {
+          "stage": "Conversion",
+          "description": "Legacy custom code converted to Lightning Web Components, Aura-to-LWC migrations, and Process Builder and Workflow Rules converted to modern Flow architecture ahead of Salesforce's deprecation roadmap."
+        },
+        {
+          "stage": "Upgrade",
+          "description": "Triannual release management — Spring, Summer, and Winter — including impact assessment, regression testing, and proactive feature adoption planning so your team captures every release's upside without disruption."
+        },
+        {
+          "stage": "Integration",
+          "description": "Salesforce-to-SAP, Oracle, and Microsoft integrations via MuleSoft, native APIs, and direct connectors — two-way sync, identity federation, and event-driven architectures for real-time customer experiences."
+        },
+        {
+          "stage": "Support",
+          "description": "Managed Services covering admin support, development backlogs, security review, license optimization, and continuous improvement — from fractional admin coverage to fully dedicated Center of Excellence teams."
+        },
+        {
+          "stage": "Roll-Out",
+          "description": "Global template rollouts across multi-country, multi-BU organizations — localization, multi-currency configuration, and full regulatory compliance including GDPR, CCPA, and HIPAA."
+        }
+      ],
       "progressCircles": [
         { "value": "93%", "label": "Implementation On-Time" },
         { "value": "89%", "label": "User Adoption Rate" },
@@ -91,6 +193,40 @@
         "Predictive analytics, forecasting models, and statistical modeling",
         "Power BI, Tableau, and SAP Analytics Cloud — design, deployment, governance",
         "Real-time dashboards and executive KPI reporting"
+      ],
+      "capabilities": [
+        {
+          "stage": "Advisory",
+          "description": "Data strategy, governance frameworks, modern architecture design, and technology selection across Snowflake, Databricks, BigQuery, Redshift, and Datasphere — building operating models designed to scale with your business."
+        },
+        {
+          "stage": "Implementation",
+          "description": "Cloud data warehouse and lakehouse deployment, ETL/ELT pipeline construction, master data management, and end-to-end BI platform rollout on Power BI, Tableau, Looker, or SAP Analytics Cloud."
+        },
+        {
+          "stage": "Migration",
+          "description": "Legacy on-premise warehouse migrations — Teradata, Netezza, Oracle Exadata, SAP BW — to modern cloud platforms with schema modernization, ETL re-engineering, historical backfill, and parallel-run validation."
+        },
+        {
+          "stage": "Conversion",
+          "description": "Legacy stored procedures, SAS code, and SQL Server packages converted to cloud-native frameworks (dbt, Spark, Airflow) — and static operational reports converted to interactive, governed, live dashboards."
+        },
+        {
+          "stage": "Upgrade",
+          "description": "BI environment modernization — Power BI Pro to Premium, Tableau Server to Cloud, SAP BW to Datasphere — with backward compatibility preserved so executive reporting continuity is never broken."
+        },
+        {
+          "stage": "Integration",
+          "description": "Real-time data integration across SAP, Oracle, Salesforce, and operational systems using Fivetran, Stitch, Kafka, and CDC connectors — plus reverse ETL to push insights back into the tools your teams already use."
+        },
+        {
+          "stage": "Support",
+          "description": "Data platform managed services — pipeline monitoring, query optimization, cost governance, dashboard maintenance, and continuous data quality remediation with predictable response SLAs."
+        },
+        {
+          "stage": "Roll-Out",
+          "description": "Enterprise-wide self-service analytics rollouts including data literacy programs, governed semantic layers, certified dataset frameworks, and federated governance models for global organizations."
+        }
       ],
       "progressCircles": [
         { "value": "92%", "label": "Forecast Accuracy" },
@@ -118,6 +254,40 @@
         "Computer vision for quality control, document processing, and security",
         "Conversational AI, chatbots, and intelligent customer service automation"
       ],
+      "capabilities": [
+        {
+          "stage": "Advisory",
+          "description": "AI opportunity assessments, ROI modeling, ethics and governance frameworks, and pragmatic 12-month roadmaps — prioritizing where automation will pay back fastest before a single line of code is written."
+        },
+        {
+          "stage": "Implementation",
+          "description": "End-to-end deployment of RPA platforms (UiPath, Automation Anywhere, SAP iRPA, Power Automate), LLM applications using OpenAI and Anthropic models, computer vision pipelines, and conversational AI."
+        },
+        {
+          "stage": "Migration",
+          "description": "Legacy automation platform migrations — Blue Prism to UiPath, on-premise to cloud-native — and ML model migrations from local notebooks to production MLOps platforms (MLflow, SageMaker, Vertex AI, Databricks)."
+        },
+        {
+          "stage": "Conversion",
+          "description": "Macro-driven and screen-scraping automations converted to robust API-based RPA — and rule-based workflows converted to AI-augmented intelligent automation that handles exceptions and improves over time."
+        },
+        {
+          "stage": "Upgrade",
+          "description": "Continuous model lifecycle management — retraining cycles, prompt engineering refinement, RPA platform version upgrades, and migration from earlier GenAI generations to current state-of-the-art alternatives."
+        },
+        {
+          "stage": "Integration",
+          "description": "AI services integrated with SAP, Oracle, Salesforce, and ServiceNow — including event-driven pipelines, intelligent document understanding workflows, and AI agents embedded inside core business processes."
+        },
+        {
+          "stage": "Support",
+          "description": "AI Managed Services — bot monitoring, model drift detection, prompt optimization, hallucination guardrails for LLMs, and continuous model improvement through retraining cycles and structured feedback loops."
+        },
+        {
+          "stage": "Roll-Out",
+          "description": "Enterprise AI Center of Excellence design — governance frameworks, citizen-developer enablement, and reusable AI component libraries for organizations scaling automation across business units."
+        }
+      ],
       "progressCircles": [
         { "value": "80%", "label": "Manual Work Reduction" },
         { "value": "3.5×", "label": "Process Speed Increase" },
@@ -144,6 +314,40 @@
         "DevOps automation, CI/CD pipelines, and containerization with Docker and Kubernetes",
         "Modernization of legacy applications and re-platforming to cloud"
       ],
+      "capabilities": [
+        {
+          "stage": "Advisory",
+          "description": "Architecture reviews, stack selection, build-vs-buy analysis, portfolio rationalization, and modernization roadmaps — steering teams away from premature scaling, monolithic traps, and over-engineered platforms."
+        },
+        {
+          "stage": "Implementation",
+          "description": "Full-stack development across Java, .NET, Node.js, Python, React, Angular, and Vue — built on microservices architectures, deployed to AWS, Azure, GCP, or on-premise based on your sovereignty and compliance needs."
+        },
+        {
+          "stage": "Migration",
+          "description": "On-premise to cloud, monolith to microservices, legacy frameworks (PHP, ColdFusion, classic ASP, VB6) to modern stacks — executed with zero-downtime cutover wherever the architecture allows it."
+        },
+        {
+          "stage": "Conversion",
+          "description": "Legacy Forms-and-Reports, COBOL mainframe, and Visual Basic 6 applications converted to modern cloud-native architectures — monolithic codebases decomposed into containerized, independently deployable services."
+        },
+        {
+          "stage": "Upgrade",
+          "description": "Framework version upgrades (Java 8→21, .NET Framework→.NET 8+, Angular major versions, React class components to hooks), database upgrades, and continuous dependency management for security and performance."
+        },
+        {
+          "stage": "Integration",
+          "description": "REST, GraphQL, and gRPC API design, event-driven architectures using Kafka, third-party API wiring, OAuth/SAML/OIDC identity federation, and clean connectivity to SAP, Oracle, and Salesforce."
+        },
+        {
+          "stage": "Support",
+          "description": "24/7 application managed services — bug fixes, security patching, performance tuning, infrastructure optimization, observability, incident response, and continuous improvement backlog management."
+        },
+        {
+          "stage": "Roll-Out",
+          "description": "Multi-region deployment with active-active architectures, blue-green deployment patterns, feature flag rollout strategies, and global CDN configuration for low-latency access worldwide."
+        }
+      ],
       "progressCircles": [
         { "value": "95%", "label": "On-Time Sprint Delivery" },
         { "value": "90%", "label": "Test Coverage" },
@@ -169,6 +373,40 @@
         "Self-service customer portals, vendor portals, and partner portals",
         "Native iOS and Android mobile apps + cross-platform with React Native and Flutter",
         "Performance optimization, accessibility (WCAG), and ongoing managed support"
+      ],
+      "capabilities": [
+        {
+          "stage": "Advisory",
+          "description": "Digital experience strategy, stack selection (headless vs. traditional CMS, native vs. cross-platform), WCAG 2.2 and ADA accessibility roadmaps, and performance and SEO optimization strategy from the ground up."
+        },
+        {
+          "stage": "Implementation",
+          "description": "Modern websites on React, Next.js, Vue, and headless CMS; B2B and self-service portals on enterprise or custom frameworks; native iOS (Swift) and Android (Kotlin) apps; cross-platform mobile with React Native and Flutter."
+        },
+        {
+          "stage": "Migration",
+          "description": "Legacy platforms (WordPress monoliths, Drupal, Sitecore, Adobe Experience Manager) migrated to modern composable architectures — with content migration, full URL preservation for SEO, and zero-downtime cutover."
+        },
+        {
+          "stage": "Conversion",
+          "description": "Legacy hybrid mobile apps (Cordova, Ionic) converted to React Native or native implementations — and static brochure websites converted to dynamic, personalization-ready, data-driven experiences."
+        },
+        {
+          "stage": "Upgrade",
+          "description": "Continuous platform upgrades — React, Next.js, mobile OS SDK updates, accessibility audit cycles, performance optimization sprints, and ongoing Lighthouse and Core Web Vitals improvement programs."
+        },
+        {
+          "stage": "Integration",
+          "description": "CRM, CDP, commerce platforms (Salesforce Commerce, Shopify, SAP Commerce), payment gateways, identity providers (Okta, Auth0, Azure AD B2C), and analytics — all cleanly wired into the customer-facing layer."
+        },
+        {
+          "stage": "Support",
+          "description": "Continuous managed services — security patching, performance monitoring, A/B test execution, content publishing support, mobile app store release management, and SLA-backed incident response."
+        },
+        {
+          "stage": "Roll-Out",
+          "description": "Multi-region, multi-language, multi-brand rollouts with full internationalization, regional compliance (GDPR, CCPA, WCAG accessibility regulations), and federated content governance for global operations."
+        }
       ],
       "progressCircles": [
         { "value": "97%", "label": "Mobile Page Speed" },
