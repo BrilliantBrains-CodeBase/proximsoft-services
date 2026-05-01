@@ -54,9 +54,6 @@ export default function ApplicationForm({ prefillPosition }: Props) {
     if (!resume) { alert('Please upload your resume (PDF).'); return }
     setStatus('sending')
 
-    const endpoint = import.meta.env.VITE_FORM_ENDPOINT
-    if (!endpoint) { setStatus('error'); return }
-
     try {
       const fd = new FormData()
       Object.entries(form).forEach(([k, v]) => fd.append(k, v))
@@ -64,7 +61,7 @@ export default function ApplicationForm({ prefillPosition }: Props) {
       fd.append('source', siteConfig.name)
       fd.append('timestamp', new Date().toISOString())
 
-      await fetch(endpoint, { method: 'POST', body: fd })
+      await fetch('/api/apply.php', { method: 'POST', body: fd })
       setStatus('success')
       setForm(EMPTY)
       setResume(null)

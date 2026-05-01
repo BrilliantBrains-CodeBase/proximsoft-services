@@ -20,14 +20,14 @@ export default function ContactForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setStatus('sending')
-    const endpoint = import.meta.env.VITE_FORM_ENDPOINT
-    if (!endpoint) { setStatus('error'); return }
     try {
-      await fetch(endpoint, {
+      const res = await fetch('/api/contact.php', {
         method: 'POST',
-        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ ...form, source: siteConfig.name, timestamp: new Date().toISOString() }),
       })
+      const data = await res.json()
+      if (!data.success) throw new Error(data.message)
       setStatus('success')
       setForm({ name: '', email: '', phone: '', website: '', message: '' })
     } catch {
