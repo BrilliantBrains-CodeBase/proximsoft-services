@@ -1154,6 +1154,8 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); }
 /* Services dropdown */
 .nav-dropdown-wrap {
   position: relative;
+  padding-bottom: 14px;
+  margin-bottom: -14px;
 }
 .nav-dropdown-trigger {
   display: inline-flex;
@@ -1165,7 +1167,7 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); }
 }
 .nav-dropdown {
   position: absolute;
-  top: calc(100% + 12px);
+  top: 100%;
   left: 50%;
   transform: translateX(-50%);
   background: #ffffff;
