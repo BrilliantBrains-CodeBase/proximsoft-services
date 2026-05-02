@@ -22,7 +22,7 @@ export default function FAQ({ items = siteConfig.faq, sectionId = 'faq' }: FAQPr
   const toggle = (i: number) => setOpen((prev) => (prev === i ? null : i))
 
   return (
-    <section id={sectionId} className="pt-4 pb-(--section-padding-y) bg-background">
+    <section id={sectionId} className="pt-4 pb-(--section-padding-y) faq-section-bg">
       <div className="mx-auto max-w-[var(--container-max-width)] px-6">
         <AnimatedSection>
           <div className="flex flex-col md:flex-row md:items-end gap-4 md:gap-8 mb-6">

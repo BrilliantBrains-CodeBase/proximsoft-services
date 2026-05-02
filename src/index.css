@@ -1073,6 +1073,11 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); }
 .partner-item img:hover { opacity: 1; filter: grayscale(0%); }
 
 /* ── FAQ accordion ───────────────────────────────────────────────────────── */
+.faq-section-bg {
+  background: url('/images/bg/bg25.jpg') no-repeat center center / cover;
+  background-color: var(--color-background);
+}
+
 .rb-faq-question {
   display: flex; justify-content: space-between; align-items: center;
   width: 100%; padding: 1.125rem 1.5rem;
