@@ -198,6 +198,32 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); }
   z-index: 2;
 }
 
+/* Slide text entrance animations */
+@keyframes slTextFromTop {
+  from { opacity: 0; transform: translateY(-45px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes slTextFromBottom {
+  from { opacity: 0; transform: translateY(45px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.slide-enter-right .sl-title,
+.slide-enter-left  .sl-title,
+.slide-inner:not([class*="slide-enter"]) .sl-title {
+  animation: slTextFromTop 0.65s cubic-bezier(0.22,1,0.36,1) 0.25s both;
+}
+.slide-enter-right .sl-desc,
+.slide-enter-left  .sl-desc,
+.slide-inner:not([class*="slide-enter"]) .sl-desc {
+  animation: slTextFromBottom 0.65s cubic-bezier(0.22,1,0.36,1) 0.4s both;
+}
+.slide-enter-right .slide-text-wrap .readon,
+.slide-enter-left  .slide-text-wrap .readon,
+.slide-inner:not([class*="slide-enter"]) .slide-text-wrap .readon {
+  animation: slTextFromBottom 0.65s cubic-bezier(0.22,1,0.36,1) 0.55s both;
+}
+
 /* Title */
 .sl-title {
   font-family: var(--font-heading);
@@ -486,14 +512,14 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); }
 
 /* ── Service cards style13 ───────────────────────────────────────────────── */
 .service-section-bg {
-  background: url('/images/bg/bg23.jpg') no-repeat center center / cover;
+  background: url('/images/bg/bg23.jpg') no-repeat center 15% / cover;
   position: relative;
 }
 .service-section-bg::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(255,255,255,0.82);
+  background: rgba(255,255,255,0.15);
 }
 .service-section-bg .inner { position: relative; z-index: 1; }
 
