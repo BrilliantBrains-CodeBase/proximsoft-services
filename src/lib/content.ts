@@ -56,6 +56,7 @@ export interface HeroSlide {
     href: string
   }
   image: string
+  cutout?: string
   shape?: string
   variant: 'dark' | 'light' | 'light-left'
 }
@@ -109,8 +110,9 @@ export const siteConfig = {
         title: 'Enterprise IT, Delivered Right.',
         description: 'Proximsoft Solutions helps enterprises unlock value through SAP, Salesforce, Oracle, Microsoft, and AI-powered platforms — from strategy to go-live.',
         cta: { text: 'Schedule a Call', href: '#contact-form' },
-        image: '/images/slider/slide-woman-red.png',
-        shape: '',
+        image: '/images/slider/h11.jpg',
+        cutout: '/images/slider/sl11-ly1.png',
+        shape: '/images/slider/sl11-ly3.png',
         variant: 'light',
       },
       {
@@ -119,11 +121,11 @@ export const siteConfig = {
         title: 'From Legacy Systems to Modern Platforms.',
         description: '10+ years of enterprise implementation experience. We modernise, integrate, and optimise the technology that runs your business.',
         cta: { text: 'Schedule a Call', href: '#contact-form' },
-        image: '/images/slider/slide-man-white.png',
-        shape: '',
-        variant: 'light',
+        image: '/images/slider/h11.jpg',
+        cutout: '/images/slider/sl11-ly2.png',
+        shape: '/images/slider/sl11-ly3.png',
+        variant: 'light-left',
       },
-
     ] as HeroSlide[],
   },
 
@@ -134,25 +136,53 @@ export const siteConfig = {
     description: 'From ERP migrations to AI-powered analytics, we deliver end-to-end technology solutions that help enterprises modernise, scale, and stay ahead of the curve.',
     items: [
       {
-        icon: 'fa-diamond',
+        icon: 'sap',
         image: '/images/services/style13/1.jpg',
         title: 'SAP Services',
         description: 'End-to-end SAP implementations, S/4HANA migrations, AMS support, and custom ABAP development tailored to your unique business processes.',
         href: '/services/sap-services',
       },
       {
-        icon: 'fa-sitemap',
+        icon: 'oracle',
         image: '/images/services/style13/2.jpg',
-        title: 'CRM & ERP Platforms',
-        description: 'Salesforce Sales & Service Cloud, Oracle EBS, and Microsoft Dynamics 365 implementations, customisations, and cross-platform integrations.',
+        title: 'Oracle Services',
+        description: 'Database administration, performance tuning, and full Oracle Cloud migrations — from EBS and JD Edwards to Fusion Cloud Applications.',
+        href: '/services/oracle-services',
+      },
+      {
+        icon: 'salesforce',
+        image: '/images/services/style13/3.jpg',
+        title: 'Salesforce Services',
+        description: 'Salesforce Sales & Service Cloud implementations, customisations, CPQ, and cross-platform integrations that drive measurable revenue outcomes.',
         href: '/services/salesforce-services',
       },
       {
-        icon: 'fa-line-chart',
-        image: '/images/services/style13/3.jpg',
-        title: 'Data, AI & Custom Dev',
-        description: 'AI-powered analytics, intelligent automation, and custom web and mobile applications that transform raw data into real business intelligence.',
+        icon: 'data',
+        image: '/images/services/style13/1.jpg',
+        title: 'Data Science & Analytics',
+        description: 'End-to-end data engineering, BI dashboards, and predictive analytics that transform raw enterprise data into clear, actionable intelligence.',
         href: '/services/data-science-services',
+      },
+      {
+        icon: 'ai',
+        image: '/images/services/style13/2.jpg',
+        title: 'AI & Machine Learning',
+        description: 'Custom AI models, NLP pipelines, and intelligent automation solutions built to solve real operational problems across your enterprise.',
+        href: '/services/ai-machine-learning',
+      },
+      {
+        icon: 'appdev',
+        image: '/images/services/style13/3.jpg',
+        title: 'Application Development',
+        description: 'Scalable, cloud-native applications built on modern frameworks — from requirements through CI/CD deployment and long-term managed support.',
+        href: '/services/application-development',
+      },
+      {
+        icon: 'web',
+        image: '/images/services/style13/1.jpg',
+        title: 'Web, Portal & Mobile Apps',
+        description: 'Responsive web platforms, enterprise portals, and cross-platform mobile apps that deliver seamless experiences across every device.',
+        href: '/services/web-portal-mobile-apps',
       },
     ] as ServiceItem[],
   },
@@ -160,8 +190,8 @@ export const siteConfig = {
   // ─── Trust signals / About ────────────────────────────────────────────────
   trust: {
     subTitle: 'Welcome to Proximsoft',
-    headline: 'Enterprise Technology, Done Right',
-    description: 'Proximsoft Solutions is a trusted IT consulting firm delivering end-to-end SAP, Salesforce, Oracle, and Microsoft implementations. We combine deep technical expertise with proven delivery frameworks to help enterprises modernise, scale, and compete in a rapidly changing landscape.',
+    headline: 'Enterprise Technology, Delivered With Precision',
+    description: 'Proximsoft Solutions is a US-based IT consulting firm helping enterprises modernize, scale, and compete in a rapidly changing landscape. From SAP and Salesforce to Oracle, Microsoft, and custom-built platforms, we combine deep technical expertise with proven delivery frameworks to turn complex technology programs into measurable business outcomes.',
     image: '/images/about/about11.png',
     imageAlt: 'Proximsoft Solutions consulting team at work',
     stats: [
@@ -169,8 +199,8 @@ export const siteConfig = {
       { value: 8, suffix: '', label: 'Service Lines' },
     ],
     statDescriptions: [
-      'A decade of delivering enterprise-grade IT solutions across SAP, Salesforce, Oracle, Microsoft, and custom platforms.',
-      'Eight specialised practice areas — from ERP and CRM to Data, AI, cloud infrastructure, and managed services.',
+      'Over a decade of delivering enterprise-grade IT solutions across SAP, Salesforce, Oracle, Microsoft, and custom-built platforms for clients across the US and beyond.',
+      'Eight specialized practice areas — spanning ERP, CRM, data, AI, cloud infrastructure, custom development, and managed services.',
     ],
     headline2: 'Trusted by Enterprise Leaders',
     badges: [] as string[],

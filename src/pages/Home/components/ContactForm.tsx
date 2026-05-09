@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { AnimatedSection } from '@/components/AnimatedSection'
+import { PhoneInput } from '@/components/PhoneInput'
 import { siteConfig } from '@/lib/content'
 
 interface FormState {
@@ -69,8 +70,13 @@ export default function ContactForm() {
                         onChange={handleChange} placeholder="E-mail" />
                     </div>
                     <div className="mb-8">
-                      <input name="phone" type="text" required value={form.phone}
-                        onChange={handleChange} placeholder="Phone Number" />
+                      <PhoneInput
+                        name="phone"
+                        value={form.phone}
+                        onChange={(v) => setForm(p => ({ ...p, phone: v }))}
+                        required
+                        placeholder="Phone Number"
+                      />
                     </div>
                     <div className="mb-8">
                       <input name="website" type="text" value={form.website}

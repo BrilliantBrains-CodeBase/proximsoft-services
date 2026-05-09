@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { Helmet } from 'react-helmet-async'
 import { AnimatedSection } from '@/components/AnimatedSection'
+import { PhoneInput } from '@/components/PhoneInput'
 import { siteConfig } from '@/lib/content'
 
 /** Counts up from 0 to target once in view */
@@ -256,10 +257,13 @@ export default function AboutPage() {
                       />
                     </div>
                     <div className="mb-6">
-                      <input
-                        name="phone" type="text" required value={form.phone}
-                        onChange={handleChange} placeholder="+1 (___) ___-____"
-                        className="about-freequote-input"
+                      <PhoneInput
+                        name="phone"
+                        value={form.phone}
+                        onChange={(v) => setForm(p => ({ ...p, phone: v }))}
+                        required
+                        placeholder="Phone number"
+                        className="about-freequote-phone"
                       />
                     </div>
                     <div className="mb-6">

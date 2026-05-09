@@ -34,9 +34,6 @@ export default function Home() {
       {/* 6. Request for Proposal — form with left-img11 */}
       <ContactForm />
 
-      {/* 7. Call to Action — split photo background, white center card */}
-      <CTA />
-
       {/* 8. Testimonials — 2-up carousel with dots (style9) */}
       <Testimonials />
 

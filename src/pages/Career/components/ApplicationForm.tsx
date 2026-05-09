@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Upload } from 'lucide-react'
 import { AnimatedSection } from '@/components/AnimatedSection'
+import { PhoneInput } from '@/components/PhoneInput'
 import { siteConfig } from '@/lib/content'
 
 interface FormState {
@@ -143,8 +144,13 @@ export default function ApplicationForm({ prefillPosition }: Props) {
                     </div>
                     <div className="mb-6">
                       <label className="form-label">Phone Number *</label>
-                      <input name="phone" type="tel" required placeholder="Enter your phone number"
-                        value={form.phone} onChange={handleChange} />
+                      <PhoneInput
+                        name="phone"
+                        value={form.phone}
+                        onChange={(v) => setForm(p => ({ ...p, phone: v }))}
+                        required
+                        placeholder="Enter your phone number"
+                      />
                     </div>
                     <div className="mb-6">
                       <label className="form-label">Desired Position *</label>

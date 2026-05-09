@@ -55,8 +55,8 @@ export default function TrustSignals() {
                 {a.stats.map((stat, i) => (
                   <div key={stat.label} className="content-part">
                     <div className="counter-part">
-                      <div className="rs-count thousand">
-                        <Counter target={stat.value} />
+                      <div className="rs-count">
+                        <Counter target={stat.value} suffix={stat.suffix} />
                       </div>
                       <div className="counter-title">{stat.label}</div>
                     </div>

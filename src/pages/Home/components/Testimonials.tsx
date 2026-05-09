@@ -36,10 +36,10 @@ export default function Testimonials() {
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
-      <div className="mx-auto max-w-[var(--container-max-width)] px-6 py-(--section-padding-y)">
+      <div className="mx-auto max-w-[var(--container-max-width)] px-6 py-8">
 
         {/* Two-col header */}
-        <div className="flex flex-col md:flex-row md:items-end gap-4 md:gap-8 mb-14">
+        <div className="flex flex-col md:flex-row md:items-end gap-4 md:gap-8 mb-6">
           <div className="md:w-5/12">
             <span className="sub-title-label">{subTitle}</span>
             <h2 className="section-title">{headline}</h2>
@@ -52,7 +52,7 @@ export default function Testimonials() {
         </div>
 
         {/* Cards */}
-        <div className="grid md:grid-cols-2 gap-8 mb-10">
+        <div className="grid md:grid-cols-2 gap-6 mb-6">
           {visible.map((item, i) => (
             <div key={`${item.name}-${active}-${i}`} className="testi-wrap">
               {/* Floating quote icon — absolutely positioned at top center */}
@@ -111,7 +111,7 @@ export default function Testimonials() {
 function QuoteIconSvg() {
   return (
     <svg width="52" height="40" viewBox="0 0 52 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0 40V24.444C0 10.37 7.111 2.074 21.333 0l2.223 3.556C16.741 5.037 13.037 9.037 12.444 16H22.222V40H0zm29.778 0V24.444C29.778 10.37 36.889 2.074 51.111 0l2.223 3.556C46.519 5.037 42.815 9.037 42.222 16H52V40H29.778z" fill="#F5A623"/>
+      <path d="M0 40V24.444C0 10.37 7.111 2.074 21.333 0l2.223 3.556C16.741 5.037 13.037 9.037 12.444 16H22.222V40H0zm29.778 0V24.444C29.778 10.37 36.889 2.074 51.111 0l2.223 3.556C46.519 5.037 42.815 9.037 42.222 16H52V40H29.778z" fill="#d83030"/>
     </svg>
   )
 }

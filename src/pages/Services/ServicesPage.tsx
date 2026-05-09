@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import { AnimatedSection } from '@/components/AnimatedSection'
+import { PhoneInput } from '@/components/PhoneInput'
 import { siteConfig } from '@/lib/content'
 import servicesData from '@/data/services.json'
 
@@ -139,10 +140,12 @@ export default function ServicesPage() {
                         />
                       </div>
                       <div className="svc-quote-field">
-                        <input
-                          name="phone" type="text" required
+                        <PhoneInput
+                          name="phone"
+                          value={form.phone}
+                          onChange={(v) => setForm(p => ({ ...p, phone: v }))}
+                          required
                           placeholder="Phone Number"
-                          value={form.phone} onChange={handleChange}
                         />
                       </div>
                       <div className="svc-quote-field">

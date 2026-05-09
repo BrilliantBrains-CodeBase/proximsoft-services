@@ -46,32 +46,50 @@ export default function Hero() {
     const leaveCls = dir === 'next' ? 'slide-leave-left' : 'slide-leave-right'
     const animCls = role === 'active' ? (leaving !== null ? enterCls : '') : leaveCls
 
+    const slideClass = slide.id  // 'slide1' or 'slide2' — drives CSS image-part positioning
+
     return (
       <div
         key={index}
-        className={`slide-inner ${isDark ? 'slide2' : 'slide1'} ${animCls}`}
+        className={`slide-inner ${slideClass} ${animCls}`}
         style={{ backgroundImage: `url(${slide.image})` }}
       >
-        {isDark && <div className="slide2-overlay" aria-hidden="true" />}
+        {/* Person cutout — absolutely positioned, bottom-anchored */}
+        {slide.cutout && (
+          <div className="image-part" aria-hidden="true">
+            <img src={slide.cutout} alt="" />
+          </div>
+        )}
+
+        {/* Spinning shape behind the cutout */}
+        {slide.shape && (
+          <div className="sl-shape" aria-hidden="true">
+            <img src={slide.shape} alt="" />
+          </div>
+        )}
 
         <div className="slide-container mx-auto max-w-[var(--container-max-width)] px-6">
           <div className="relative z-10 grid grid-cols-1 md:grid-cols-12">
             {isDark ? (
               <div className="slide-text-wrap md:col-span-8">
+                <span className="sl-eyebrow">{slide.eyebrow}</span>
                 <h1 className="sl-title text-white">{slide.title}</h1>
                 <p className="sl-desc text-white/90">{slide.description}</p>
                 <a href={slide.cta.href} className="readon">{slide.cta.text}</a>
               </div>
             ) : isLightLeft ? (
               <div className="slide-text-wrap md:col-span-6">
+                <span className="sl-eyebrow">{slide.eyebrow}</span>
                 <h1 className="sl-title text-(--color-text-primary)">{slide.title}</h1>
-                <p className="sl-desc text-text-secondary">{slide.description}</p>
+                <p className="sl-desc">{slide.description}</p>
                 <a href={slide.cta.href} className="readon">{slide.cta.text}</a>
               </div>
             ) : (
+              /* slide1: text on the right, cutout on the left */
               <div className="slide-text-wrap md:col-start-6 md:col-span-7">
+                <span className="sl-eyebrow">{slide.eyebrow}</span>
                 <h1 className="sl-title text-(--color-text-primary)">{slide.title}</h1>
-                <p className="sl-desc text-text-secondary">{slide.description}</p>
+                <p className="sl-desc">{slide.description}</p>
                 <a href={slide.cta.href} className="readon">{slide.cta.text}</a>
               </div>
             )}
