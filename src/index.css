@@ -264,6 +264,7 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); }
   to   { transform: translateY(0);    opacity: 1; }
 }
 
+
 .rs-slider-11 .image-part {
   position: absolute;
   bottom: 0;
@@ -280,6 +281,18 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); }
 
 .rs-slider-11 .slide1 .image-part { left: 0; }
 .rs-slider-11 .slide2 .image-part { right: 0; }
+.rs-slider-11 .slide3 .image-part {
+  right: 0;
+  top: 40px;
+  bottom: 0;
+  width: 45%;
+}
+.rs-slider-11 .slide3 .image-part img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
 
 @media (max-width: 991px) {
   .rs-slider-11 .image-part { display: none; }
@@ -296,6 +309,7 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); }
 
 .rs-slider-11 .slide1 .sl-shape { left: 80px; }
 .rs-slider-11 .slide2 .sl-shape { right: 80px; }
+.rs-slider-11 .slide3 .sl-shape { display: none; }
 
 @media (max-width: 991px) {
   .rs-slider-11 .sl-shape { display: none; }
@@ -1208,7 +1222,7 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); }
 /* left floating image */
 .rs-quote-2 .left-img-wrap {
   position: absolute;
-  left: 0;
+  left: 48px;
   top: 50%;
   transform: translateY(-50%);
   z-index: 0;
@@ -1715,10 +1729,9 @@ a.contact-info-value:hover { color: var(--color-accent); }
 /* Form + side panel layout */
 .contact-form-wrap {
   display: flex;
-  border-radius: 6px;
-  overflow: hidden;
-  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.1);
+  gap: 48px;
   min-height: 560px;
+  align-items: center;
 }
 
 .contact-side-panel {
@@ -1726,19 +1739,17 @@ a.contact-info-value:hover { color: var(--color-accent); }
   flex-shrink: 0;
   position: relative;
   overflow: hidden;
-  background: var(--color-surface-dark);
+  background: transparent;
 }
 .contact-side-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center top;
+  object-fit: contain;
+  object-position: center bottom;
   display: block;
 }
 .contact-side-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(3, 46, 66, 0.45);
+  display: none;
 }
 
 @media (max-width: 768px) {

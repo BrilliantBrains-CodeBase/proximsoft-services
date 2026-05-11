@@ -29,7 +29,7 @@ export default function Footer() {
                 <img
                   src={footer.logo}
                   alt={name}
-                  className="h-9 w-auto"
+                  className="h-20 w-auto"
                   onError={(e) => {
                     e.currentTarget.style.display = 'none'
                     const next = e.currentTarget.nextElementSibling as HTMLElement | null
@@ -59,8 +59,8 @@ export default function Footer() {
                   <a href={`mailto:${contact.email}`}>{contact.email}</a>
                 </li>
                 <li>
-                  <span className="footer-icon" aria-hidden="true"><ClockIcon /></span>
-                  <span>{contact.openingHours.join(' | ')}</span>
+                  <span className="footer-icon" aria-hidden="true"><GlobeIcon /></span>
+                  <a href="https://proximsoft.com/" target="_blank" rel="noopener noreferrer">proximsoft.com</a>
                 </li>
               </ul>
             </div>
@@ -108,8 +108,8 @@ function PhoneIcon() {
 function MailIcon() {
   return <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
 }
-function ClockIcon() {
-  return <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+function GlobeIcon() {
+  return <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><path d="M12 2c-3 3-5 6-5 10s2 7 5 10"/><path d="M12 2c3 3 5 6 5 10s-2 7-5 10"/><path d="M2 12h20"/></svg>
 }
 function FacebookIcon() {
   return <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>

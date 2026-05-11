@@ -41,6 +41,7 @@ export default function Hero() {
     const slide = slides[index]
     const isDark = slide.variant === 'dark'
     const isLightLeft = slide.variant === 'light-left'
+    const isCentered = slide.variant === 'centered'
 
     const enterCls = dir === 'next' ? 'slide-enter-right' : 'slide-enter-left'
     const leaveCls = dir === 'next' ? 'slide-leave-left' : 'slide-leave-right'
@@ -79,6 +80,13 @@ export default function Hero() {
               </div>
             ) : isLightLeft ? (
               <div className="slide-text-wrap md:col-span-6">
+                <span className="sl-eyebrow">{slide.eyebrow}</span>
+                <h1 className="sl-title text-(--color-text-primary)">{slide.title}</h1>
+                <p className="sl-desc">{slide.description}</p>
+                <a href={slide.cta.href} className="readon">{slide.cta.text}</a>
+              </div>
+            ) : isCentered ? (
+              <div className="slide-text-wrap slide-text-centered md:col-span-10 md:col-start-2">
                 <span className="sl-eyebrow">{slide.eyebrow}</span>
                 <h1 className="sl-title text-(--color-text-primary)">{slide.title}</h1>
                 <p className="sl-desc">{slide.description}</p>

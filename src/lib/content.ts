@@ -58,7 +58,7 @@ export interface HeroSlide {
   image: string
   cutout?: string
   shape?: string
-  variant: 'dark' | 'light' | 'light-left'
+  variant: 'dark' | 'light' | 'light-left' | 'centered'
 }
 
 export const siteConfig = {
@@ -126,6 +126,17 @@ export const siteConfig = {
         shape: '/images/slider/sl11-ly3.png',
         variant: 'light-left',
       },
+      {
+        id: 'slide3',
+        eyebrow: 'CERTIFIED ENTERPRISE CONSULTANTS',
+        title: 'Senior Experts. Real Outcomes.',
+        description: 'Every engagement is staffed with certified, senior consultants — never juniors. We own delivery from day one through go-live and beyond.',
+        cta: { text: 'Schedule a Call', href: '#contact-form' },
+        image: '/images/slider/h11.jpg',
+        cutout: '/images/slider/sl11-ly3-cutout.png',
+        shape: '/images/slider/sl11-ly3.png',
+        variant: 'light-left',
+      },
     ] as HeroSlide[],
   },
 
@@ -137,49 +148,49 @@ export const siteConfig = {
     items: [
       {
         icon: 'sap',
-        image: '/images/services/style13/1.jpg',
+        image: '/images/services/style13/sap.png',
         title: 'SAP Services',
         description: 'End-to-end SAP implementations, S/4HANA migrations, AMS support, and custom ABAP development tailored to your unique business processes.',
         href: '/services/sap-services',
       },
       {
         icon: 'oracle',
-        image: '/images/services/style13/2.jpg',
+        image: '/images/services/style13/oracle.png',
         title: 'Oracle Services',
         description: 'Database administration, performance tuning, and full Oracle Cloud migrations — from EBS and JD Edwards to Fusion Cloud Applications.',
         href: '/services/oracle-services',
       },
       {
         icon: 'salesforce',
-        image: '/images/services/style13/3.jpg',
+        image: '/images/services/style13/salesforce.png',
         title: 'Salesforce Services',
         description: 'Salesforce Sales & Service Cloud implementations, customisations, CPQ, and cross-platform integrations that drive measurable revenue outcomes.',
         href: '/services/salesforce-services',
       },
       {
         icon: 'data',
-        image: '/images/services/style13/1.jpg',
+        image: '/images/services/style13/data.png',
         title: 'Data Science & Analytics',
         description: 'End-to-end data engineering, BI dashboards, and predictive analytics that transform raw enterprise data into clear, actionable intelligence.',
         href: '/services/data-science-services',
       },
       {
         icon: 'ai',
-        image: '/images/services/style13/2.jpg',
+        image: '/images/services/style13/ai.png',
         title: 'AI & Machine Learning',
         description: 'Custom AI models, NLP pipelines, and intelligent automation solutions built to solve real operational problems across your enterprise.',
         href: '/services/ai-machine-learning',
       },
       {
         icon: 'appdev',
-        image: '/images/services/style13/3.jpg',
+        image: '/images/services/style13/appdev.png',
         title: 'Application Development',
         description: 'Scalable, cloud-native applications built on modern frameworks — from requirements through CI/CD deployment and long-term managed support.',
         href: '/services/application-development',
       },
       {
         icon: 'web',
-        image: '/images/services/style13/1.jpg',
+        image: '/images/services/style13/appdev.png',
         title: 'Web, Portal & Mobile Apps',
         description: 'Responsive web platforms, enterprise portals, and cross-platform mobile apps that deliver seamless experiences across every device.',
         href: '/services/web-portal-mobile-apps',

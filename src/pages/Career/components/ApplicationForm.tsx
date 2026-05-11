@@ -100,31 +100,26 @@ export default function ApplicationForm({ prefillPosition }: Props) {
           </p>
         </AnimatedSection>
 
-        <div className="contact-form-wrap">
-          {/* Left panel */}
-          <div className="contact-side-panel" aria-hidden="true">
-            <img
-              src="/images/about/contact-left-img.jpg"
-              alt=""
-              className="contact-side-img"
-            />
-            <div className="contact-side-overlay" />
-            <div className="absolute bottom-10 left-8 right-8 text-white z-10">
-              <h3 className="text-2xl font-bold mb-2" style={{ fontFamily: 'var(--font-heading)' }}>
-                Join Our Team
-              </h3>
-              <p className="text-sm leading-relaxed opacity-90">
-                We're looking for talented individuals to help us shape the future of enterprise technology.
-              </p>
+        <AnimatedSection>
+          <div className="mx-auto max-w-3xl bg-white rounded-xl overflow-hidden shadow-sm">
+
+            {/* Header image banner */}
+            <div style={{ height: '220px', position: 'relative', overflow: 'hidden' }}>
+              <img
+                src="/images/about/career-left-img.jpg"
+                alt=""
+                style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 20%' }}
+              />
+              <div style={{ position: 'absolute', inset: 0, background: 'rgba(7,26,39,0.45)' }} />
+              <div style={{ position: 'absolute', bottom: '1.5rem', left: '2rem', right: '2rem', color: '#fff', zIndex: 1 }}>
+                <span className="sub-title-label" style={{ color: 'rgba(255,255,255,0.75)' }}>Apply Now</span>
+                <h2 className="section-title" style={{ color: '#fff', marginBottom: 0 }}>Submit Your Application</h2>
+              </div>
             </div>
-          </div>
 
-          {/* Right: form */}
-          <AnimatedSection className="contact-form-col">
-            <div className="rs-quote-2"><div className="quote-form-card" style={{ boxShadow: 'none', background: 'transparent', padding: '3rem 3.5rem' }}>
-              <span className="sub-title-label">Apply Now</span>
-              <h2 className="section-title mb-8">Submit Your Application</h2>
-
+            {/* Form body */}
+            <div className="rs-quote-2">
+              <div className="quote-form-card" style={{ boxShadow: 'none', background: 'transparent', padding: '2.5rem 3rem' }}>
               <form onSubmit={handleSubmit}>
                   <div className="grid sm:grid-cols-2 gap-x-6">
                     <div className="mb-6">
@@ -222,9 +217,10 @@ export default function ApplicationForm({ prefillPosition }: Props) {
                     {status === 'sending' ? 'Submitting…' : 'Submit Application →'}
                   </button>
                 </form>
-            </div></div>
-          </AnimatedSection>
-        </div>
+              </div>
+            </div>
+          </div>
+        </AnimatedSection>
       </div>
     </section>
   )

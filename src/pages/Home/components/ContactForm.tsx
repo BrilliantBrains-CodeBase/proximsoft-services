@@ -45,7 +45,7 @@ export default function ContactForm() {
         <img
           src={sideImage}
           alt="Consulting team"
-          className="max-w-[480px] w-full object-contain relative z-10"
+          className="max-w-160 w-full object-contain relative z-10"
           loading="lazy"
         />
         <div className="morphin-blob-quote" aria-hidden="true" />
