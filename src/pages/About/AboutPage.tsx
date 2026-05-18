@@ -36,6 +36,7 @@ function Counter({ target, suffix = '' }: { target: number; suffix?: string }) {
   return <span ref={ref}>{count}{suffix}</span>
 }
 
+/* teamMembers — restore when team section is finalized
 const teamMembers = [
   {
     name: '[Team Member Name]',
@@ -56,6 +57,7 @@ const teamMembers = [
     avatar: '/images/team/3.jpg',
   },
 ]
+*/
 
 interface FormState {
   name: string
@@ -110,30 +112,26 @@ export default function AboutPage() {
       {/* ── About intro: image left, text right ── */}
       <div>
         <div className="mx-auto max-w-[var(--container-max-width)] px-6 py-[var(--section-padding-y)]">
-          <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div className="grid md:grid-cols-[3fr_2fr] gap-12 lg:gap-16 items-stretch">
 
             <AnimatedSection>
               <div className="about-inner-img-wrap">
                 <img
-                  src="/images/about/inner/left-img.jpg"
-                  alt="Proximsoft consulting team"
+                  src="/images/about/inner/left-img.png"
+                  alt="Proximsoft Solutions LLC consulting team"
                   className="about-inner-img"
                   loading="lazy"
                   onError={(e) => { e.currentTarget.src = '/images/about/about11.png' }}
                 />
-                <div className="about-inner-author-badge">
-                  <span className="about-author-name">[Founder Name]</span>
-                  <span className="about-author-role">Founder &amp; CEO</span>
-                </div>
               </div>
             </AnimatedSection>
 
             <AnimatedSection delay={0.15}>
               <div className="pl-0 md:pl-8">
-                <span className="sub-title-label">About Proximsoft Solutions</span>
+                <span className="sub-title-label">About Proximsoft Solutions LLC</span>
                 <h2 className="section-title mb-4">We Deliver Enterprise IT That Actually Works</h2>
                 <p className="text-[var(--color-text-secondary)] leading-relaxed mb-6">
-                  For over a decade, Proximsoft Solutions has helped US enterprises modernize the systems that run their business. We were built to fix the two biggest frustrations in enterprise IT — invoices that keep growing, and consultants who disappear right after go-live. Our work runs on three simple principles: senior people on every project, honest pricing every time, and accountability that lasts long after launch.
+                  For over two decades, Proximsoft Solutions LLC has helped US enterprises modernize the systems that run their business. We were built to fix the two biggest frustrations in enterprise IT — invoices that keep growing, and consultants who disappear right after go-live. Our work runs on three simple principles: senior people on every project, honest pricing every time, and accountability that lasts long after launch.
                 </p>
                 <ul className="about-checklist mb-0">
                   <li>Certified, senior consultants on every engagement — never juniors learning on your dime</li>
@@ -179,8 +177,59 @@ export default function AboutPage() {
         </div>
       </div>
 
-      {/* ── Team Section ── */}
-      <section className="bg-white py-[var(--section-padding-y)]">
+      {/* ── Our Approach ── */}
+      <section className="py-[var(--section-padding-y)]">
+        <div className="mx-auto max-w-[var(--container-max-width)] px-6">
+          <AnimatedSection className="text-center mb-12">
+            <span className="sub-title-label">{siteConfig.approach.subTitle}</span>
+            <h2 className="section-title">{siteConfig.approach.headline}</h2>
+            <p className="mt-4 text-[var(--color-text-secondary)] max-w-2xl mx-auto">
+              {siteConfig.approach.description}
+            </p>
+          </AnimatedSection>
+          <div className="about-approach-grid">
+            {siteConfig.approach.steps.map((step, i) => (
+              <AnimatedSection key={step.number} delay={i * 0.08}>
+                <div className="about-approach-card">
+                  <div className="about-approach-number">{step.number}</div>
+                  <h3 className="about-approach-title">{step.title}</h3>
+                  <p className="about-approach-desc">{step.description}</p>
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Core Values ── */}
+      <section className="about-values-band py-[var(--section-padding-y)]">
+        <div className="mx-auto max-w-[var(--container-max-width)] px-6">
+          <AnimatedSection className="text-center mb-12">
+            <span className="sub-title-label" style={{ color: 'rgba(255,255,255,0.7)' }}>
+              {siteConfig.values.subTitle}
+            </span>
+            <h2 className="section-title" style={{ color: '#ffffff' }}>
+              {siteConfig.values.headline}
+            </h2>
+          </AnimatedSection>
+          <div className="about-values-grid">
+            {siteConfig.values.items.map((item, i) => (
+              <AnimatedSection key={item.title} delay={i * 0.1}>
+                <div className="about-value-card">
+                  <div className="about-value-icon">
+                    <ValueIcon name={item.icon} />
+                  </div>
+                  <h3 className="about-value-title">{item.title}</h3>
+                  <p className="about-value-desc">{item.description}</p>
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Team Section — hidden until finalized ── */}
+      {/* <section className="bg-white py-[var(--section-padding-y)]">
         <div className="mx-auto max-w-[var(--container-max-width)] px-6">
           <AnimatedSection className="text-center mb-12">
             <span className="sub-title-label">Our Leadership</span>
@@ -215,7 +264,7 @@ export default function AboutPage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* ── Free Quote Section ── */}
       <div className="about-freequote">
@@ -303,7 +352,15 @@ export default function AboutPage() {
   )
 }
 
-/* ── Inline SVG icons ─────────────────────────────────────────────────────── */
+function ValueIcon({ name }: { name: string }) {
+  if (name === 'users')
+    return <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+  if (name === 'dollar')
+    return <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+  return <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+}
+
+/* ── Inline SVG icons — restore when team section is finalized ───────────────
 function FacebookIcon() {
   return (
     <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor">
@@ -332,3 +389,4 @@ function PinterestIcon() {
     </svg>
   )
 }
+*/

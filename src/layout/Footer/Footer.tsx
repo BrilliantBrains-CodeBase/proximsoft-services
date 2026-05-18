@@ -60,7 +60,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <span className="footer-icon" aria-hidden="true"><GlobeIcon /></span>
-                  <a href="https://proximsoft.com/" target="_blank" rel="noopener noreferrer">proximsoft.com</a>
+                  <a href="https://www.proximsoftsol.com/" target="_blank" rel="noopener noreferrer">www.proximsoftsol.com</a>
                 </li>
               </ul>
             </div>

@@ -166,7 +166,7 @@ export default function ContactPage() {
         {/* ── Google Maps embed — flush below form, no gap before footer ── */}
         <div className="contact-map-wrap">
           <iframe
-            title="Proximsoft Solutions location"
+            title="Proximsoft Solutions LLC location"
             src={`https://maps.google.com/maps?q=${encodeURIComponent(addressDisplay)}&output=embed`}
             width="100%"
             height="450"

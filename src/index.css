@@ -1168,6 +1168,172 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); }
   opacity: 0.9;
 }
 
+/* ── Job listings ────────────────────────────────────────────────────────── */
+
+.job-search-wrap {
+  position: relative;
+  max-width: 540px;
+}
+.job-search-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-text-secondary);
+  pointer-events: none;
+}
+.job-search-input {
+  width: 100%;
+  border: 1.5px solid var(--color-border);
+  border-radius: 8px;
+  padding: 0.65rem 2.75rem;
+  font-size: 0.9375rem;
+  font-family: var(--font-body);
+  color: var(--color-text-primary);
+  background: #fff;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.job-search-input:focus { border-color: var(--color-primary); }
+.job-search-input::placeholder { color: var(--color-text-secondary); }
+.job-search-clear {
+  position: absolute;
+  right: 0.875rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  line-height: 1;
+}
+.job-search-clear:hover { color: var(--color-accent); }
+
+.job-list { display: flex; flex-direction: column; gap: 0.75rem; }
+
+.job-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem;
+  background: #fff;
+  border: 1.5px solid var(--color-border);
+  border-radius: 10px;
+  padding: 1.5rem 2rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.job-row:hover {
+  border-color: var(--color-primary);
+  box-shadow: 0 4px 18px rgba(3, 46, 66, 0.08);
+}
+@media (max-width: 768px) {
+  .job-row { flex-direction: column; gap: 1.25rem; }
+}
+
+.job-row-main { flex: 1; min-width: 0; }
+
+.job-row-title {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.job-row-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem;
+  margin-bottom: 0.75rem;
+}
+
+.job-row-desc {
+  font-size: 0.875rem;
+  line-height: 1.65;
+  color: var(--color-text-secondary);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.job-row-action {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+@media (max-width: 768px) {
+  .job-row-action { flex-direction: row; align-items: center; }
+}
+
+.job-row-posted {
+  font-size: 0.8125rem;
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+}
+
+.job-apply-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.5rem 1.25rem;
+  border-radius: 6px;
+  background: var(--color-accent);
+  color: #fff;
+  font-family: var(--font-heading);
+  font-size: 0.875rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+  white-space: nowrap;
+}
+.job-apply-btn:hover { background: #b22020; transform: translateY(-1px); }
+
+.job-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.375rem;
+  margin-top: 2rem;
+}
+.job-page-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.25rem;
+  height: 2.25rem;
+  padding: 0 0.5rem;
+  border-radius: 6px;
+  border: 1.5px solid var(--color-border);
+  background: #fff;
+  color: var(--color-text-secondary);
+  font-family: var(--font-heading);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s, color 0.2s;
+}
+.job-page-btn:hover:not(:disabled) {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+.job-page-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+.job-page-btn--active {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #fff;
+}
+.job-page-btn--active:hover { background: var(--color-primary); color: #fff; }
+
 /* Application / career form (same bottom-border style as contact form) */
 .contact-form-col .phone-input-wrap {
   border-bottom: 2px solid #f0eded;
@@ -1824,16 +1990,18 @@ a.contact-info-value:hover { color: var(--color-accent); }
 /* About intro image */
 .about-inner-img-wrap {
   position: relative;
-  display: inline-block;
+  display: block;
   width: 100%;
-  padding-bottom: 2rem;
+  height: 100%;
 }
 .about-inner-img {
   width: 100%;
+  height: 100%;
+  min-height: 480px;
   border-radius: 6px;
   display: block;
   object-fit: cover;
-  max-height: 520px;
+  object-position: center top;
 }
 .about-inner-author-badge {
   position: absolute;
@@ -2082,6 +2250,95 @@ a.contact-info-value:hover { color: var(--color-accent); }
   font-size: 0.8125rem;
   color: rgba(255, 255, 255, 0.45);
   font-family: var(--font-body);
+}
+
+/* ── About: Approach (4-step process) ────────────────────────────────────── */
+
+.about-approach-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  align-items: stretch;
+}
+@media (max-width: 1024px) { .about-approach-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 576px)  { .about-approach-grid { grid-template-columns: 1fr; } }
+
+/* AnimatedSection wrapper must stretch to fill the grid cell */
+.about-approach-grid > * { height: 100%; }
+
+.about-approach-card {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 2rem 1.5rem;
+  height: 100%;
+  box-sizing: border-box;
+  transition: box-shadow 0.25s, transform 0.25s;
+}
+.about-approach-card:hover {
+  box-shadow: 0 8px 28px rgba(3, 46, 66, 0.10);
+  transform: translateY(-4px);
+}
+.about-approach-number {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  opacity: 0.18;
+  line-height: 1;
+  margin-bottom: 0.75rem;
+}
+.about-approach-title {
+  font-family: var(--font-heading);
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: 0.625rem;
+}
+.about-approach-desc {
+  font-size: 0.9375rem;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+
+/* ── About: Core Values (icon cards, dark bg) ────────────────────────────── */
+
+.about-values-band {
+  background: var(--color-surface-dark);
+}
+.about-values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+@media (max-width: 768px) { .about-values-grid { grid-template-columns: 1fr; } }
+
+.about-value-card {
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+}
+.about-value-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(216, 48, 48, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.25rem;
+  color: var(--color-accent);
+}
+.about-value-title {
+  font-family: var(--font-heading);
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 0.625rem;
+}
+.about-value-desc {
+  font-size: 0.9375rem;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.75;
 }
 
 /* ── Blog pages ──────────────────────────────────────────────────────────── */

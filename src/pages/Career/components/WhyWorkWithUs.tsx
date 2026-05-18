@@ -13,7 +13,7 @@ export default function WhyWorkWithUs() {
     <section className="py-[var(--section-padding-y)] bg-[var(--color-gray-bg2)]">
       <div className="mx-auto max-w-[var(--container-max-width)] px-6">
         <AnimatedSection className="text-center mb-14">
-          <span className="sub-title-label">Life at Proximsoft</span>
+          <span className="sub-title-label">Life at Proximsoft Solutions LLC</span>
           <h2 className="section-title">Why Work With Us</h2>
         </AnimatedSection>
 

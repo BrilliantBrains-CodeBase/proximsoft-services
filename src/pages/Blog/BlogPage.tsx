@@ -29,7 +29,7 @@ export default function BlogPage() {
         <title>{query ? `"${query}" — Blog` : 'Blog'} — {siteConfig.name}</title>
         <meta
           name="description"
-          content="Practical insights on enterprise technology — SAP, Salesforce, AI strategy, and digital transformation from the Proximsoft team."
+          content="Practical insights on enterprise technology — SAP, Salesforce, AI strategy, and digital transformation from the Proximsoft Solutions LLC team."
         />
       </Helmet>
 
