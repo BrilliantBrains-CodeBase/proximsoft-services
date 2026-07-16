@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import { AnimatedSection } from '@/components/AnimatedSection'
 import { PhoneInput } from '@/components/PhoneInput'
@@ -68,8 +69,9 @@ interface FormState {
 }
 
 export default function AboutPage() {
+  const navigate = useNavigate()
   const [form, setForm] = useState<FormState>({ name: '', email: '', phone: '', website: '', message: '' })
-  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle')
+  const [status, setStatus] = useState<'idle' | 'sending' | 'error'>('idle')
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }))
@@ -77,16 +79,14 @@ export default function AboutPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setStatus('sending')
-    const endpoint = import.meta.env.VITE_FORM_ENDPOINT
-    if (!endpoint) { setStatus('error'); return }
+    const endpoint = siteConfig.formEndpoint
     try {
       await fetch(endpoint, {
         method: 'POST',
         headers: { 'Content-Type': 'text/plain;charset=utf-8' },
         body: JSON.stringify({ ...form, source: siteConfig.name, timestamp: new Date().toISOString() }),
       })
-      setStatus('success')
-      setForm({ name: '', email: '', phone: '', website: '', message: '' })
+      navigate('/thank-you')
     } catch {
       setStatus('error')
     }
@@ -275,16 +275,7 @@ export default function AboutPage() {
 
             {/* Right form */}
             <div className="about-freequote-form">
-              {status === 'success' ? (
-                <div className="py-10 text-center">
-                  <div className="text-4xl mb-3" style={{ color: 'var(--color-accent)' }}>✓</div>
-                  <h3 className="text-lg font-semibold text-white" style={{ fontFamily: 'var(--font-heading)' }}>
-                    Message received!
-                  </h3>
-                  <p className="text-white/70 text-sm mt-2">We'll get back to you within one business day.</p>
-                </div>
-              ) : (
-                <form onSubmit={handleSubmit}>
+              <form onSubmit={handleSubmit}>
                   <span className="sub-title-label" style={{ color: 'rgba(255,255,255,0.7)' }}>Let's Talk</span>
                   <h2 className="section-title mb-2" style={{ color: '#ffffff' }}>Request a Free Quote</h2>
                   <p className="about-freequote-subline">
@@ -343,7 +334,6 @@ export default function AboutPage() {
                     No spam. No pushy follow-ups. Just a real reply from someone who can actually help.
                   </p>
                 </form>
-              )}
             </div>
           </div>
         </div>

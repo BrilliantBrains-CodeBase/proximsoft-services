@@ -29,8 +29,7 @@ export default function BlogSinglePage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setStatus('sending')
-    const endpoint = import.meta.env.VITE_FORM_ENDPOINT
-    if (!endpoint) { setStatus('error'); return }
+    const endpoint = siteConfig.formEndpoint
     try {
       await fetch(endpoint, {
         method: 'POST',

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import { AnimatedSection } from '@/components/AnimatedSection'
 import { PhoneInput } from '@/components/PhoneInput'
@@ -16,9 +16,10 @@ interface QuoteForm {
 
 export default function ServicesPage() {
   const { services } = servicesData
+  const navigate = useNavigate()
 
   const [form, setForm] = useState<QuoteForm>({ name: '', email: '', phone: '', website: '', message: '' })
-  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle')
+  const [status, setStatus] = useState<'idle' | 'sending' | 'error'>('idle')
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }))
@@ -26,8 +27,7 @@ export default function ServicesPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setStatus('sending')
-    const endpoint = import.meta.env.VITE_FORM_ENDPOINT
-    if (!endpoint) { setStatus('error'); return }
+    const endpoint = siteConfig.formEndpoint
     try {
       await fetch(endpoint, {
         method: 'POST',
@@ -39,8 +39,7 @@ export default function ServicesPage() {
           timestamp: new Date().toISOString(),
         }),
       })
-      setStatus('success')
-      setForm({ name: '', email: '', phone: '', website: '', message: '' })
+      navigate('/thank-you')
     } catch {
       setStatus('error')
     }
@@ -116,14 +115,7 @@ export default function ServicesPage() {
                 <span className="svc-quote-sub">Let's Talk</span>
                 <h2 className="svc-quote-heading">Request a Free Quote</h2>
 
-                {status === 'success' ? (
-                  <div className="svc-quote-success">
-                    <div className="svc-quote-success-icon">✓</div>
-                    <h3>Request received!</h3>
-                    <p>We'll get back to you within one business day.</p>
-                  </div>
-                ) : (
-                  <form onSubmit={handleSubmit} noValidate>
+                <form onSubmit={handleSubmit} noValidate>
                     <div className="svc-quote-fields">
                       <div className="svc-quote-field">
                         <input
@@ -176,7 +168,6 @@ export default function ServicesPage() {
                       {status === 'sending' ? 'Sending…' : 'Submit Now'}
                     </button>
                   </form>
-                )}
               </AnimatedSection>
             </div>
 

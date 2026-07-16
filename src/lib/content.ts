@@ -68,6 +68,9 @@ export const siteConfig = {
   // ─── Business identity ──────────────────────────────────────────────────────
   name: 'Proximsoft Solutions LLC',
 
+  // ─── Form endpoint (Google Apps Script /exec URL) ───────────────────────────
+  formEndpoint: 'https://script.google.com/macros/s/AKfycbzKkpvFj-0WvOr_fIlsWZj_cZZFnzn1k7_bfTyGH3sHZ-aQ4L3i6OygcTt5WEFao9Bm4g/exec',
+
   // ─── Contact details ────────────────────────────────────────────────────────
   contact: {
     phone: '+1 (848) 288-2855',

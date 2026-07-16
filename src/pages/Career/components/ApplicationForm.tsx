@@ -57,7 +57,7 @@ export default function ApplicationForm({ prefillPosition }: Props) {
     if (!resume) { alert('Please upload your resume (PDF).'); return }
     setStatus('sending')
 
-    const endpoint = 'https://script.google.com/macros/s/AKfycbysDseK3uADYyStECiGZM3QcrdRXBWh3f5awndn10gFE0G-PCwVxwUA-LW9xbsk-GsGlg/exec'
+    const endpoint = siteConfig.formEndpoint
 
     try {
       // Read PDF as base64 so Google Apps Script can save it to Drive
