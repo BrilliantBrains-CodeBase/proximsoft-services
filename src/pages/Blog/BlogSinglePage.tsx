@@ -1,16 +1,9 @@
-import { useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import { AnimatedSection } from '@/components/AnimatedSection'
 import { siteConfig } from '@/lib/content'
 import blogsData from '@/data/blogs.json'
 import BlogSidebar from './BlogSidebar'
-
-interface FormState {
-  name: string
-  email: string
-  message: string
-}
 
 export default function BlogSinglePage() {
   const { slug } = useParams<{ slug: string }>()
@@ -19,34 +12,6 @@ export default function BlogSinglePage() {
   const postIndex = posts.findIndex((p) => p.slug === slug)
   const post = posts[postIndex]
   const nextPost = postIndex < posts.length - 1 ? posts[postIndex + 1] : null
-
-  const [form, setForm] = useState<FormState>({ name: '', email: '', message: '' })
-  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle')
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
-    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }))
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setStatus('sending')
-    const endpoint = siteConfig.formEndpoint
-    try {
-      await fetch(endpoint, {
-        method: 'POST',
-        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-        body: JSON.stringify({
-          ...form,
-          subject: `Blog comment on: ${post?.title}`,
-          source: siteConfig.name,
-          timestamp: new Date().toISOString(),
-        }),
-      })
-      setStatus('success')
-      setForm({ name: '', email: '', message: '' })
-    } catch {
-      setStatus('error')
-    }
-  }
 
   if (!post) {
     return (
@@ -143,66 +108,6 @@ export default function BlogSinglePage() {
                       </Link>
                     </div>
                   )}
-
-                  {/* Leave a Reply */}
-                  <div className="blog-reply-form">
-                    <h3 className="reply-title">Leave a Reply</h3>
-                    <p className="reply-subtitle">Your email address will not be published. Required fields are marked *</p>
-
-                    {status === 'success' ? (
-                      <div className="reply-success">
-                        <div className="reply-success-icon">✓</div>
-                        <h4>Comment received!</h4>
-                        <p>Thank you for your message. We'll review it shortly.</p>
-                      </div>
-                    ) : (
-                      <form onSubmit={handleSubmit}>
-                        <div className="reply-grid">
-                          <div className="reply-field">
-                            <label htmlFor="reply-name">Name *</label>
-                            <input
-                              id="reply-name"
-                              name="name"
-                              type="text"
-                              required
-                              value={form.name}
-                              onChange={handleChange}
-                            />
-                          </div>
-                          <div className="reply-field">
-                            <label htmlFor="reply-email">Email *</label>
-                            <input
-                              id="reply-email"
-                              name="email"
-                              type="email"
-                              required
-                              value={form.email}
-                              onChange={handleChange}
-                            />
-                          </div>
-                          <div className="reply-field reply-field--full">
-                            <label htmlFor="reply-message">Comment</label>
-                            <textarea
-                              id="reply-message"
-                              name="message"
-                              rows={7}
-                              value={form.message}
-                              onChange={handleChange}
-                            />
-                          </div>
-                        </div>
-                        {status === 'error' && (
-                          <p className="reply-error">
-                            Something went wrong. Please try again or call{' '}
-                            <a href={`tel:${siteConfig.contact.phone}`}>{siteConfig.contact.phone}</a>.
-                          </p>
-                        )}
-                        <button type="submit" className="readon" disabled={status === 'sending'}>
-                          {status === 'sending' ? 'Sending…' : 'Post Comment'}
-                        </button>
-                      </form>
-                    )}
-                  </div>
                 </div>
               </AnimatedSection>
             </div>
