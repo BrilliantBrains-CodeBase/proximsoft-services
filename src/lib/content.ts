@@ -443,7 +443,7 @@ export const siteConfig = {
   footer: {
     tagline: 'Enterprise IT consulting across SAP, Salesforce, Oracle, Microsoft, and AI platforms. From strategy to go-live — we deliver outcomes that last.',
     copyrightYear: 2026,
-    logo: '/images/logo-proximsoft-white.png',
+    logo: '/images/proximsoft-solutions-logo.png',
     serviceLinks: [
       { text: 'SAP Services',            href: '/services/sap-services' },
       { text: 'Oracle Services',         href: '/services/oracle-services' },

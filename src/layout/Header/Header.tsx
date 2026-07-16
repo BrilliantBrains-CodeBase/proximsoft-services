@@ -68,7 +68,7 @@ export default function Header() {
             {/* Logo */}
             <Link to="/" aria-label={`${siteConfig.name} home`} className="flex-shrink-0">
               <img
-                src="/images/logo-proximsoft.png"
+                src="/images/proximsoft-solutions-logo.png"
                 alt={siteConfig.name}
                 className="h-11 w-auto"
                 onError={(e) => {
